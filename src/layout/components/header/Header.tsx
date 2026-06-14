@@ -11,7 +11,10 @@ export function Header() {
         <header className={styles.container}>
             <HeaderBrand brandName="LensByMike" />
 
-            <nav className={styles.navDesktop}>
+            <nav 
+                className={styles.navDesktop}
+                aria-label="Primary navigation"
+            >
                 {navLinks.map(link => (
                     <NavLink
                         className={styles.navLink}
@@ -28,14 +31,23 @@ export function Header() {
                 onClick={() => setIsOpen(prev => !prev)}
                 aria-label={isOpen ? "Close menu" : "Open menu"}
                 aria-expanded={isOpen}
+                aria-controls="mobile-navigation"
             >
-                <span className={styles.line} />
-                <span className={styles.line} />
-                <span className={styles.line} />
+                <span className={styles.line} aria-hidden="true" />
+                <span className={styles.line} aria-hidden="true" />
+                <span className={styles.line} aria-hidden="true" />
             </button>
 
-            <div className={`${styles.mobileMenu} ${isOpen ? styles.mobileMenuOpen : ""}`}>
-                <nav className={styles.mobileNav}>
+            <div 
+                id="mobile-navigation"
+                className={`${styles.mobileMenu} ${isOpen ? styles.mobileMenuOpen : ""}`}
+                aria-hidden={!isOpen}
+                inert={!isOpen}
+            >
+                <nav 
+                    className={styles.mobileNav}
+                    aria-label="Mobile navigation"
+                >
                     {navLinks.map(link => (
                         <NavLink
                             className={styles.navLink}
