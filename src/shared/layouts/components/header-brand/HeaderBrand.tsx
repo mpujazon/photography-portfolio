@@ -6,9 +6,13 @@ type HeaderBrandProps = {
 }
 
 const HeaderBrand = ({ brandName }: HeaderBrandProps) => (
-    <Link className={styles.brandContainer} to='/'>
-        <div className={styles.brandBox}></div>
-        <h1 className={styles.brandName}>{brandName}</h1>
+    <Link
+        className={styles.brandContainer}
+        to='/'
+        aria-label={`${brandName} home`}
+    >
+        <div className={styles.brandBox} aria-hidden="true"/>
+        <span className={styles.brandName}>{brandName}</span>
     </Link>
 );
 

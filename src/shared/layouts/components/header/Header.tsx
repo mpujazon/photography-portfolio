@@ -27,6 +27,7 @@ export function Header() {
             </nav>
 
             <button
+                type="button"
                 className={`${styles.hamburger} ${isOpen ? styles.hamburgerOpen : ""}`}
                 onClick={() => setIsOpen(prev => !prev)}
                 aria-label={isOpen ? "Close menu" : "Open menu"}
@@ -46,7 +47,7 @@ export function Header() {
             >
                 <nav 
                     className={styles.mobileNav}
-                    aria-label="Mobile navigation"
+                    aria-label="Primary navigation"
                 >
                     {navLinks.map(link => (
                         <NavLink

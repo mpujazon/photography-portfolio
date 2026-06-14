@@ -5,7 +5,7 @@ export function PublicLayout(){
     return (
         <>
             <Header/>
-            <main>
+            <main className=''>
                 <Outlet/>
             </main>
             <footer>

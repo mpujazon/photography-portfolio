@@ -5,8 +5,16 @@ body{
     background: linear-gradient(0deg, var(--color-grey-9) 0%, var(--color-grey-9) 100%), linear-gradient(0deg, var(--color-grey-9) 0%, var(--color-grey-9) 100%), var(--color-white-solid);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
 main {
-    padding-top: 4.25rem;
+    min-height: calc(100dvh - 4.25rem);
+    padding: 5.5rem 1rem 2rem;
+}
+
+@media (min-width: 768px){
+    main{
+        padding: 6.25rem 2.56rem 4.25rem;
+    }
 }
