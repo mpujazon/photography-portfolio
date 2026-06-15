@@ -5,7 +5,7 @@ type TertiaryButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     label: string;
 }
 
-export function TertiaryButton({
+function TertiaryButton({
     label,
     type = "button",
     ...props

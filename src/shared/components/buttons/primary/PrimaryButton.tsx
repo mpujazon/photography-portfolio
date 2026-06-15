@@ -5,7 +5,7 @@ type PrimaryButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     label: string;
 }
 
-export function PrimaryButton({
+function PrimaryButton({
     label,
     type = "button",
     ...props

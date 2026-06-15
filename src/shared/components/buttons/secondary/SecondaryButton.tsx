@@ -5,7 +5,7 @@ type SecondaryButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     label: string;
 }
 
-export function SecondaryButton({
+function SecondaryButton({
     label,
     type = "button",
     ...props
