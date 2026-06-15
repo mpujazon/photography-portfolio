@@ -1,0 +1,43 @@
+.tertiaryButton{
+    --tertiary-button-padding-y: clamp(0.75rem, 2.5vw, 0.875rem);
+    --tertiary-button-padding-x: clamp(0.25rem, 3vw, 0.75rem);
+    --tertiary-button-font-size: clamp(1rem, 3.5vw, var(--font-size-20));
+
+    display: inline-flex;
+    padding: var(--tertiary-button-padding-y) var(--tertiary-button-padding-x);
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    gap: var(--item-spacing-8-01);
+    color: var(--color-white-solid);
+    border: var(--stroke-weight-2) solid var(--color-black-0);
+    text-align: center;
+    font-family: var(--font-family-font-1), sans-serif;
+    font-size: var(--tertiary-button-font-size);
+    font-style: normal;
+    font-weight: var(--font-weight-700);
+    line-height: 1;
+    letter-spacing: var(--letter-spacing--0-2);
+    text-transform: uppercase;
+
+    &:not(:disabled):active{
+        transform: scale(1.03);
+    }
+    &:disabled{
+        background: transparent;
+        opacity: .5;
+    }
+}
+
+@media (max-width: 420px){
+    .tertiaryButton{
+        width: 100%;
+    }
+}
+
+@media (hover: hover) and (pointer: fine){
+    .tertiaryButton:not(:disabled):hover{
+        color: var(--color-yellow-62);
+        border: var(--stroke-weight-2, 2px) solid var(--color-white-solid);
+    }
+}

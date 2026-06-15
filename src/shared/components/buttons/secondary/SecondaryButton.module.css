@@ -1,0 +1,38 @@
+.secondaryButton{
+    display: inline-flex;
+    padding: clamp(0.875rem, 2.5vw, 1.125rem) clamp(1.25rem, 5vw, 1.875rem);
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    transition: background-color .3s ease-in-out;
+    color: var(--color-white-solid);
+    text-align: center;
+    font-family: var(--font-family-font-1), sans-serif;
+    font-size: clamp(1rem, 3.5vw, var(--font-size-20));
+    font-style: normal;
+    font-weight: var(--font-weight-700);
+    line-height: 1;
+    letter-spacing: var(--letter-spacing--0-2);
+    text-transform: uppercase;
+    border: var(--stroke-weight-2) solid var(--color-grey-38);
+    &:not(:disabled):active{
+        transform: scale(1.03);
+    }
+    &:disabled{
+        background: transparent;
+        opacity: .5;
+    }
+}
+
+@media (max-width: 420px){
+    .secondaryButton{
+        width: 100%;
+    }
+}
+
+@media (hover: hover) and (pointer: fine){
+    .secondaryButton:not(:disabled):hover{
+        background-color: var(--color-white-solid);
+        color: var(--color-black-solid);
+    }
+}
