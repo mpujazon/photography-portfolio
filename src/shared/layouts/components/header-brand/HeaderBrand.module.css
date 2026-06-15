@@ -22,6 +22,12 @@
     }
 }
 
+@media (prefers-reduced-motion: reduce){
+    .brandContainer{
+        animation: none;
+    }
+}
+
 .brandBox{
     width: 0.6875rem;
     height: 0.6875rem;
