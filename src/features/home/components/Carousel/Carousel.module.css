@@ -1,0 +1,273 @@
+.carouselContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    align-self: stretch;
+    gap: 0.65rem;
+    padding: 0 0.875rem 0.875rem 0;
+    position: relative;
+}
+
+/* ── Frame counter ── */
+
+.frameHeader {
+    display: flex;
+    align-items: center;
+    gap: var(--item-spacing-10);
+    color: var(--color-grey-56);
+    font-family: var(--font-family-font-3), sans-serif;
+    font-size: var(--font-size-12);
+    font-weight: var(--font-weight-400);
+    line-height: var(--line-height-19-2);
+    letter-spacing: var(--letter-spacing-1-68);
+    text-transform: uppercase;
+}
+
+.frameNumber {
+    color: var(--color-yellow-62);
+}
+
+.decorativeSquare {
+    width: 0.5625rem;
+    height: 0.5625rem;
+    flex-shrink: 0;
+    background: var(--color-yellow-62);
+    animation: decorativeSquareBlink 1.2s steps(1, end) infinite;
+}
+
+@keyframes decorativeSquareBlink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0.25; }
+}
+
+.mainFrame {
+    position: relative;
+    margin: 0;
+    background: var(--color-yellow-62);
+    box-shadow: 0.875rem 0.875rem 0 var(--color-yellow-62);
+    overflow: hidden;
+}
+
+.mainFrame::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 0.1875rem solid #050505;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* ── Image ── */
+
+@keyframes imageReveal {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.currentImage {
+    height: 32.87rem;
+    width: 100%;
+    align-self: stretch;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    filter: saturate(0.88) contrast(1.04);
+    animation: imageReveal 0.42s ease forwards;
+}
+
+/* ── Caption ── */
+
+.imageCaption {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    max-width: min(92%, 22rem);
+    padding: 1.2rem 1.5rem;
+    background: #030303;
+    color: var(--color-grey-56);
+    font-family: var(--font-family-font-3), monospace;
+    font-size: 0.8rem;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+.captionNumber {
+    color: var(--color-yellow-62);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.captionTitle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+    flex-shrink: 1;
+}
+
+.captionDot {
+    flex-shrink: 0;
+}
+
+.captionCategory {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* ── Autoplay progress bar ── */
+
+@keyframes progressFill {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+}
+
+.progressBar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0.1875rem;
+    background: var(--color-yellow-62);
+    transform-origin: left;
+    transform: scaleX(0);
+    animation: progressFill 4s linear forwards;
+    z-index: 4;
+}
+
+/* ── Thumbnails ── */
+
+.thumbnailStrip {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: clamp(5rem, 9vw, 7.5rem);
+    gap: 0.4rem;
+    padding-right: 0.875rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.thumbnailStrip::-webkit-scrollbar {
+    display: none;
+}
+
+.thumbnailButton {
+    position: relative;
+    min-width: 0;
+    height: clamp(6.5rem, 11vw, 8.5rem);
+    padding: 0;
+    border: 0.125rem solid #050505;
+    background: #050505;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 200ms ease;
+}
+
+.thumbnailButton::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(6, 6, 6, 0.28);
+    transition: background 180ms ease;
+}
+
+.thumbnailButton:hover::after,
+.thumbnailButtonActive::after {
+    background: rgba(6, 6, 6, 0.04);
+}
+
+.thumbnailButtonActive {
+    border-color: var(--color-yellow-62);
+}
+
+.thumbnailImage {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ── Reduced motion ── */
+
+@media (prefers-reduced-motion: reduce) {
+    .decorativeSquare {
+        animation: none;
+    }
+
+    .currentImage {
+        animation: none;
+    }
+
+    .progressBar {
+        animation: none;
+        transform: scaleX(1);
+    }
+}
+
+/* ── Tablet: 768–1023px ── */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .carouselContainer {
+        padding-right: 0;
+        padding-bottom: 0;
+    }
+
+    .mainFrame {
+        box-shadow: 0.75rem 0.75rem 0 var(--color-yellow-62);
+    }
+
+    .currentImage {
+        height: clamp(22rem, 48vw, 30rem);
+    }
+
+    .thumbnailStrip {
+        padding-right: 0;
+        grid-auto-columns: clamp(4.5rem, 8vw, 6rem);
+    }
+
+    .thumbnailButton {
+        height: clamp(4.5rem, 8vw, 6rem);
+    }
+}
+
+/* ── Mobile: < 768px ── */
+
+@media (max-width: 767px) {
+    .carouselContainer {
+        padding-right: 0.5rem;
+        padding-bottom: 0.5rem;
+        gap: 0.4rem;
+    }
+
+    .mainFrame {
+        box-shadow: 0.5rem 0.5rem 0 var(--color-yellow-62);
+    }
+
+    .currentImage {
+        height: clamp(17rem, 70vw, 26rem);
+    }
+
+    .imageCaption {
+        gap: 0.6rem;
+        padding: 0.875rem 1rem;
+        font-size: 0.7rem;
+        max-width: min(95%, 22rem);
+    }
+
+    .thumbnailStrip {
+        grid-auto-columns: clamp(4rem, 18vw, 5.5rem);
+        padding-right: 0.5rem;
+        gap: 0.2rem;
+    }
+
+    .thumbnailButton {
+        border-width: 0.1rem;
+        height: clamp(4rem, 18vw, 5.5rem);
+    }
+}
