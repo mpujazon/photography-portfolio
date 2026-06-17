@@ -3,6 +3,7 @@ import PrimaryButton from "../../../../shared/components/buttons/primary/Primary
 import {useNavigate} from "react-router";
 import SecondaryButton from "../../../../shared/components/buttons/secondary/SecondaryButton.tsx";
 import Carousel from "../Carousel/Carousel.tsx";
+import { useTranslation } from 'react-i18next';
 
 const MOCK_PICTURES = [
     {
@@ -33,6 +34,7 @@ const MOCK_PICTURES = [
 
 export function Hero() {
     const navigate = useNavigate();
+    const { t } = useTranslation('home');
 
     return (
         <section className={style.heroSection}>
@@ -44,9 +46,9 @@ export function Hero() {
                 <div className={style.heroFirstColumn}>
                     <p
                         className={style.heroEyebrow}
-                        aria-label="Street and sports photographer based in Barcelona, Spain"
+                        aria-label={t('hero.eyebrowAria')}
                     >
-                        Street &amp; Sports Photographer <span aria-hidden="true">/</span> Barcelona, ES
+                        {t('hero.eyebrow')}
                     </p>
                     <h1
                         id="hero-title"
@@ -58,17 +60,14 @@ export function Hero() {
                     </h1>
                     <p className={style.heroSubtitle}>
                         <span aria-hidden={true} className={style.yellow}>··</span>
-                        {" "}Photographs by Miguel Pujazón Cárdenas
+                        {t('hero.subtitle')}
                     </p>
                     <p className={style.heroParagraph}>
-                        I shoot motion and the street — the heat off a MotoGP
-                        straight, the lean of a classic bike at Montjuïc, the half-second
-                        a city gives you on a corner. No staging, no retouching beyond
-                        the grade. Just the frame I caught.
+                        {t('hero.paragraph')}
                     </p>
                     <div className={style.ctaContainer}>
-                        <PrimaryButton label="VIEW ALBUMS" onClick={() => navigate("/albums")}/>
-                        <SecondaryButton label="GET IN TOUCH" onClick={() => navigate("/contact")}/>
+                        <PrimaryButton label={t('hero.ctaPrimary')} onClick={() => navigate("/albums")}/>
+                        <SecondaryButton label={t('hero.ctaSecondary')} onClick={() => navigate("/contact")}/>
                     </div>
                 </div>
                 <div className={style.heroSecondColumn}>

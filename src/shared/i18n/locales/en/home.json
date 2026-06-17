@@ -6,5 +6,11 @@
         "paragraph": "I shoot motion and the street — the heat off a MotoGP straight, the lean of a classic bike at Montjuïc, the half-second a city gives you on a corner. No staging, no retouching beyond the grade. Just the frame I caught.",
         "ctaPrimary": "VIEW ALBUMS",
         "ctaSecondary": "GET IN TOUCH"
+    },
+    "carousel": {
+        "frame": "Frame",
+        "frameAria": "Fotografía {{current}} de {{total}}",
+        "carouselThumbnails": "Carousel thumbnails",
+        "showPicture": "Show {{pictureTitle}} picture"
     }
 }
