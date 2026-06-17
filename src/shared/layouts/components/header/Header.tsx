@@ -3,9 +3,11 @@ import { navLinks } from "./navLinks.ts";
 import { NavLink } from "react-router";
 import styles from "./Header.module.css";
 import HeaderBrand from "../header-brand/HeaderBrand.tsx";
+import { useTranslation } from "react-i18next";
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false);
+    const { t } = useTranslation("common");
 
     return (
         <header className={styles.container}>
@@ -13,7 +15,7 @@ function Header() {
 
             <nav 
                 className={styles.navDesktop}
-                aria-label="Primary navigation"
+                aria-label={t('nav.ariaLabel')}
             >
                 {navLinks.map(link => (
                     <NavLink
@@ -21,7 +23,7 @@ function Header() {
                         key={link.path}
                         to={link.path}
                     >
-                        {link.label}
+                        {t(link.keyLabel)}
                     </NavLink>
                 ))}
             </nav>
@@ -30,7 +32,7 @@ function Header() {
                 type="button"
                 className={`${styles.hamburger} ${isOpen ? styles.hamburgerOpen : ""}`}
                 onClick={() => setIsOpen(prev => !prev)}
-                aria-label={isOpen ? "Close menu" : "Open menu"}
+                aria-label={isOpen ? t('nav.closeMenu') : t('nav.openMenu')}
                 aria-expanded={isOpen}
                 aria-controls="mobile-navigation"
             >
@@ -47,7 +49,7 @@ function Header() {
             >
                 <nav 
                     className={styles.mobileNav}
-                    aria-label="Primary navigation"
+                    aria-label={t('nav.ariaLabel')}
                 >
                     {navLinks.map(link => (
                         <NavLink
@@ -56,7 +58,7 @@ function Header() {
                             to={link.path}
                             onClick={() => setIsOpen(false)}
                         >
-                            {link.label}
+                            {t(link.keyLabel)}
                         </NavLink>
                     ))}
                 </nav>

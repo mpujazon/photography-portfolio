@@ -1,18 +1,18 @@
 export const navLinks = [
     {
-        label: 'Homepage',
+        keyLabel: 'nav.home',
         path: '/'
     },
     {
-        label: 'Albums',
+        keyLabel: 'nav.albums',
         path: '/albums'
     },
     {
-        label: 'About',
+        keyLabel: 'nav.about',
         path: '/about'
     },
     {
-        label: 'Contact',
+        keyLabel: 'nav.contact',
         path: '/contact'
     },
 ]
