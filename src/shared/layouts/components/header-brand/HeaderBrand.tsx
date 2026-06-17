@@ -1,19 +1,20 @@
 import { Link } from "react-router";
 import styles from "./HeaderBrand.module.css";
+import { useTranslation } from "react-i18next";
 
-type HeaderBrandProps = {
-    brandName: string;
-}
+const HeaderBrand = () => {
+    const { t } = useTranslation("common");
 
-const HeaderBrand = ({ brandName }: HeaderBrandProps) => (
-    <Link
-        className={styles.brandContainer}
-        to='/'
-        aria-label={`${brandName} home`}
-    >
-        <div className={styles.brandBox} aria-hidden="true"/>
-        <span className={styles.brandName}>{brandName}</span>
-    </Link>
-);
+    return (
+        <Link
+            className={styles.brandContainer}
+            to='/'
+            aria-label={`${t('brand.name')} ${t('nav.home')}`}
+        >
+            <div className={styles.brandBox} aria-hidden="true"/>
+            <span className={styles.brandName}>{t('brand.name')}</span>
+        </Link>
+    )
+};
 
 export default HeaderBrand;

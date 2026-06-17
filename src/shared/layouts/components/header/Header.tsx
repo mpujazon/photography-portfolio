@@ -4,12 +4,12 @@ import { NavLink } from "react-router";
 import styles from "./Header.module.css";
 import HeaderBrand from "../header-brand/HeaderBrand.tsx";
 
-export function Header() {
+function Header() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <header className={styles.container}>
-            <HeaderBrand brandName="LensByMike" />
+            <HeaderBrand />
 
             <nav 
                 className={styles.navDesktop}
@@ -64,3 +64,5 @@ export function Header() {
         </header>
     );
 }
+
+export default Header;

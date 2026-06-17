@@ -1,0 +1,17 @@
+{
+    "brand": {
+        "name": "LensByMike"
+    },
+    "nav": {
+        "home": "Homepage",
+        "albums": "Albums",
+        "about": "About",
+        "contact": "Contact",
+        "openMenu": "Open menu",
+        "closeMenu": "Close menu",
+        "ariaLabel": "Main navigation"
+    },
+    "footer": {
+        "copyright": "© {{year}} Miguel Pujazón"
+    }
+}
