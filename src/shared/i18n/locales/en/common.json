@@ -12,6 +12,12 @@
         "ariaLabel": "Main navigation"
     },
     "footer": {
-        "copyright": "© {{year}} Miguel Pujazón"
+        "eyebrow": "Street & Sports Photographer · Barcelona, ES · Since 2018",
+        "tagline": "Light. Motion. Detail.",
+        "copyright": "© {{year}} Miguel Pujazón",
+        "socialAriaLabel": "Social media",
+        "instagram": "Follow on Instagram",
+        "px500": "View portfolio on 500px",
+        "email": "Send an email"
     }
 }
