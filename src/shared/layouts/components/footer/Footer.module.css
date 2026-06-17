@@ -1,3 +1,94 @@
-.footer{
-    
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 1rem;
+    border-top: var(--stroke-weight-1) solid rgba(255, 255, 255, 0.12);
+}
+
+.brandContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--item-spacing-14-01);
+    text-decoration: none;
+}
+
+.brandName {
+    color: var(--color-white-solid);
+    font-family: var(--font-family-font-1), sans-serif;
+    font-size: clamp(1.2rem, 4vw, 2.4rem);
+    font-style: normal;
+    font-weight: var(--font-weight-900);
+    line-height: var(--line-height-34-56);
+    letter-spacing: var(--letter-spacing--0-77);
+    text-transform: uppercase;
+}
+
+.yellow {
+    color: var(--color-yellow-62);
+}
+
+.eyebrow {
+    color: var(--color-grey-56);
+    font-family: var(--font-family-font-3), sans-serif;
+    font-size: clamp(var(--font-size-11), 2vw, var(--font-size-15));
+    font-style: normal;
+    font-weight: var(--font-weight-400);
+    line-height: var(--line-height-17-6);
+    letter-spacing: var(--letter-spacing-1-1);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.tagline {
+    color: var(--color-white-solid);
+    font-family: var(--font-family-font-4), serif;
+    font-size: clamp(0.875rem, 2vw, 1.1rem);
+    font-style: italic;
+    font-weight: 300;
+    line-height: var(--line-height-24);
+    text-align: center;
+    opacity: 0.7;
+}
+
+.copyright {
+    color: var(--color-grey-56);
+    font-family: var(--font-family-font-3), sans-serif;
+    font-size: var(--font-size-11);
+    font-weight: var(--font-weight-400);
+    letter-spacing: var(--letter-spacing-1-1);
+    text-align: center;
+    margin-top: 2rem;
+    opacity: 0.6;
+}
+
+.social {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.socialLink {
+    color: var(--color-grey-56);
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+
+.socialLink:hover {
+    color: var(--color-white-solid);
+}
+
+.socialLink:focus-visible {
+    outline: 2px solid var(--color-yellow-62);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+@media (min-width: 768px) {
+    .footer {
+        padding: 3rem 2.56rem;
+    }
 }
