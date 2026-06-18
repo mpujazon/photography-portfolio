@@ -29,11 +29,6 @@
     }
 }
 
-@media (max-width: 420px){
-    .tertiaryButton{
-        width: 100%;
-    }
-}
 
 @media (hover: hover) and (pointer: fine){
     .tertiaryButton:not(:disabled):hover{

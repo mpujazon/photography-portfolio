@@ -8,7 +8,8 @@ function FeaturedWork() {
     const navigate = useNavigate();
 
     return (
-        <section className={style.featuredWorkShell}>
+        <section className={style.featuredWorkSection}>
+            <div className={style.featuredWorkShell}>
             <header className={style.header}>
                 <div className={style.header__textContainer}>
                     <span className={style.header__subtitle}>{t("featuredWork.subtitle")}</span>
@@ -23,6 +24,7 @@ function FeaturedWork() {
                     onClick={() => navigate("/albums")}
                 />
             </header>
+            </div>
         </section>
     )
 }
