@@ -2,7 +2,8 @@
 @import "variables.css";
 
 body{
-    background: linear-gradient(0deg, var(--color-grey-9) 0%, var(--color-grey-9) 100%), linear-gradient(0deg, var(--color-grey-9) 0%, var(--color-grey-9) 100%), var(--color-white-solid);
+    background-color: var(--color-grey-9);
+    background: linear-gradient(180deg, var(--color-grey-9) 0%, var(--color-near-black) 100%);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
