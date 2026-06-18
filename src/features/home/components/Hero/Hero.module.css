@@ -3,23 +3,23 @@
 .heroSection {
     margin-left: -1rem;
     margin-right: -1rem;
-    border-bottom: var(--stroke-weight-1) solid rgba(255, 255, 255, 0.12);
+    border-bottom: var(--stroke-weight-1) solid var(--color-border-subtle);
 }
 
 /* ── Shell ── */
 
 .heroShell {
-    width: min(100%, var(--width-1320));
+    width: min(100%, var(--layout-max));
     margin: 0 auto;
-    padding: 0 1rem 1rem;
+    padding: 0 var(--space-4) var(--space-4);
 }
 
 /* ── Two-column grid ── */
 
 .hero {
     display: grid;
-    padding: 1.5rem 0 0;
-    row-gap: 2.5rem;
+    padding: var(--space-6) 0 0;
+    row-gap: var(--space-10);
     column-gap: 3.2rem;
     align-items: start;
     grid-template-columns: minmax(0, 1fr);
@@ -30,7 +30,7 @@
 @keyframes heroSlideUp {
     from {
         opacity: 0;
-        transform: translateY(1.25rem);
+        transform: translateY(var(--space-5));
     }
     to {
         opacity: 1;
@@ -42,14 +42,14 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 1.5rem;
+    gap: var(--space-6);
     justify-self: stretch;
 }
 
 .heroEyebrow {
     color: var(--color-grey-56);
     font-family: var(--font-family-font-3), sans-serif;
-    font-size: var(--font-size-12);
+    font-size: var(--text-sm);
     font-weight: var(--font-weight-400);
     line-height: var(--line-height-19-2);
     letter-spacing: var(--letter-spacing-1-68);
@@ -90,7 +90,7 @@
 .heroSubtitle {
     color: var(--color-grey-56);
     font-family: var(--font-family-font-3), sans-serif;
-    font-size: clamp(var(--font-size-11), 2vw, var(--font-size-12));
+    font-size: clamp(var(--text-xs), 2vw, var(--text-sm));
     font-weight: var(--font-weight-400);
     line-height: var(--line-height-17-6);
     letter-spacing: var(--letter-spacing-1-1);
@@ -104,16 +104,16 @@
 .heroParagraph {
     color: var(--color-grey-84);
     font-family: var(--font-family-font-4), sans-serif;
-    font-size: clamp(var(--font-size-15), 2vw, var(--font-size-20));
+    font-size: clamp(var(--text-md), 2vw, var(--text-xl));
     font-weight: var(--font-weight-400);
     line-height: var(--line-height-32);
-    max-width: var(--width-463-56);
+    max-width: var(--layout-card);
 }
 
 .ctaContainer {
     display: flex;
     align-items: flex-start;
-    gap: var(--font-size-12);
+    gap: var(--space-3);
     align-self: stretch;
     flex-wrap: wrap;
 }
@@ -142,7 +142,7 @@
         grid-template-columns: minmax(0, 34rem);
         justify-content: center;
         justify-items: stretch;
-        row-gap: 2.5rem;
+        row-gap: var(--space-10);
     }
 
     .heroFirstColumn {
@@ -176,13 +176,13 @@
 
 @media (min-width: 768px) {
     .heroSection {
-        margin-left: -2.56rem;
-        margin-right: -2.56rem;
+        margin-left: calc(var(--page-gutter) * -1);
+        margin-right: calc(var(--page-gutter) * -1);
     }
 
     .heroShell {
-        padding-left: 2.56rem;
-        padding-right: 2.56rem;
+        padding-left: var(--page-gutter);
+        padding-right: var(--page-gutter);
     }
 }
 
@@ -196,7 +196,7 @@
 
     .heroFirstColumn {
         grid-column: 1 / span 1;
-        padding-top: 0.5rem;
+        padding-top: var(--space-2);
     }
 
     .heroSecondColumn {

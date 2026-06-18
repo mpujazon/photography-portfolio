@@ -3,19 +3,19 @@
     padding: clamp(0.875rem, 2.5vw, 1.125rem) clamp(1.25rem, 5vw, 1.875rem);
     justify-content: center;
     align-items: center;
-    gap: var(--item-spacing-8);
+    gap: var(--space-2);
     background: var(--color-yellow-62);
     color: var(--color-black-solid);
     text-align: center;
     font-family: var(--font-family-font-1), sans-serif;
-    font-size: clamp(1rem, 3.5vw, var(--font-size-20));
+    font-size: clamp(1rem, 3.5vw, var(--text-xl));
     font-style: normal;
     font-weight: var(--font-weight-700);
     line-height: 1;
     letter-spacing: var(--letter-spacing--0-2);
     text-transform: uppercase;
     border: var(--stroke-weight-2) solid var(--color-yellow-62);
-    transition: background-color .3s ease-in-out;
+    transition: background-color var(--transition-normal) ease-in-out;
     &:not(:disabled):active{
         transform: scale(1.03);
     }

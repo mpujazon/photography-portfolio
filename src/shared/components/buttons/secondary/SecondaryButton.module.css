@@ -4,11 +4,11 @@
     justify-content: center;
     align-items: center;
     background-color: transparent;
-    transition: background-color .3s ease-in-out;
+    transition: background-color var(--transition-normal) ease-in-out;
     color: var(--color-white-solid);
     text-align: center;
     font-family: var(--font-family-font-1), sans-serif;
-    font-size: clamp(1rem, 3.5vw, var(--font-size-20));
+    font-size: clamp(1rem, 3.5vw, var(--text-xl));
     font-style: normal;
     font-weight: var(--font-weight-700);
     line-height: 1;

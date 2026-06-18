@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
-    /* color */
+    /* ── Colors ── */
     --color-azure-6: #0d0e10;
     --color-black-0: #00000000;
     --color-black-solid: #000000;
@@ -19,50 +17,36 @@
     --color-white-0: #ffffff00;
     --color-white-solid: #ffffff;
     --color-yellow-62: #f2c94c;
-    /* number */
-    --font-size-11: 0.6875rem;
-    --font-size-12: 0.75rem;
-    --font-size-15: 0.9375rem;
-    --font-size-19: 1.1875rem;
-    --font-size-20: 1.25rem;
-    --font-size-96: 6rem;
-    --font-size-144: 9rem;
+    --color-near-black: #050505;
+    --color-caption-bg: #030303;
+    --color-surface-dark-72: rgba(22, 23, 26, 0.72);
+    --color-border-subtle: rgba(255, 255, 255, 0.12);
+    --color-overlay-28: rgba(6, 6, 6, 0.28);
+    --color-overlay-04: rgba(6, 6, 6, 0.04);
+
+    /* ── Font families ── */
+    --font-family-font-1: Archivo;
+    --font-family-font-2: Arial;
+    --font-family-font-3: "Space Mono", sans-serif;
+    --font-family-font-4: Newsreader;
+    --font-style-italic: Italic;
+
+    /* ── Font sizes ── */
+    --text-xs:      0.6875rem;  /* 11px */
+    --text-sm:      0.75rem;    /* 12px */
+    --text-md:      0.9375rem;  /* 15px */
+    --text-lg:      1.1875rem;  /* 19px */
+    --text-xl:      1.25rem;    /* 20px */
+    --text-2xl:     2.2rem;     /* 35.2px */
+    --text-hero:    6rem;       /* 96px */
+    --text-display: 9rem;       /* 144px */
+
+    /* ── Font weights ── */
     --font-weight-400: 400;
     --font-weight-700: 700;
     --font-weight-900: 900;
-    --item-spacing--0-7: -0.0437rem;
-    --item-spacing-0: 0rem;
-    --item-spacing-2-01: 0.1256rem;
-    --item-spacing-7-99: 0.4994rem;
-    --item-spacing-8: 0.5rem;
-    --item-spacing-8-01: 0.5006rem;
-    --item-spacing-9: 0.5625rem;
-    --item-spacing-9-01: 0.5631rem;
-    --item-spacing-10: 0.625rem;
-    --item-spacing-14: 0.875rem;
-    --item-spacing-14-01: 0.8756rem;
-    --item-spacing-15-3: 0.9563rem;
-    --item-spacing-s: 1rem;
-    --item-spacing-16-01: 1.0006rem;
-    --item-spacing-20-5: 1.2813rem;
-    --item-spacing-30-72: 1.92rem;
-    --item-spacing-32: 2rem;
-    --item-spacing-45-54: 2.8463rem;
-    --item-spacing-53-36: 3.335rem;
-    --item-spacing-53-37: 3.3356rem;
-    --item-spacing-69-12: 4.32rem;
-    --item-spacing-152-17: 9.5106rem;
-    --item-spacing-163-79: 10.2369rem;
-    --item-spacing-171-62: 10.7262rem;
-    --item-spacing-190-51: 11.9069rem;
-    --item-spacing-218-94: 13.6838rem;
-    --item-spacing-255-13: 15.9456rem;
-    --item-spacing-297-22: 18.5763rem;
-    --item-spacing-297-23: 18.5769rem;
-    --item-spacing-387-7: 24.2313rem;
-    --item-spacing-391-28: 24.455rem;
-    --item-spacing-405-57: 25.3481rem;
-    --item-spacing-533-74: 33.3587rem;
+
+    /* ── Letter spacing ── */
     --letter-spacing--1-97: -0.1232rem;
     --letter-spacing--1-54: -0.0962rem;
     --letter-spacing--1-38: -0.0864rem;
@@ -79,6 +63,8 @@
     --letter-spacing-1-44: 0.09rem;
     --letter-spacing-1-68: 0.105rem;
     --letter-spacing-1-76: 0.11rem;
+
+    /* ── Line heights ── */
     --line-height-16-5: 1.0313rem;
     --line-height-17-6: 1.1rem;
     --line-height-19-2: 1.2rem;
@@ -94,17 +80,43 @@
     --line-height-76-8: 4.8rem;
     --line-height-92-69: 5.7931rem;
     --line-height-115-2: 7.2rem;
-    --opacity-60: 3.75rem;
-    --stroke-weight-1: 0.0625rem;
-    --stroke-weight-2: 0.125rem;
-    --width-463-56: 28.9722rem;
-    --width-573-93: 35.8704rem;
-    --width-680: 42.5rem;
-    --width-1320: 82.5rem;
-    /* string */
-    --font-family-font-1: Archivo;
-    --font-family-font-2: Arial;
-    --font-family-font-3: "Space Mono", sans-serif;
-    --font-family-font-4: Newsreader;
-    --font-style-italic: Italic;
+
+    /* ── Border widths ── */
+    --stroke-weight-1: 0.0625rem;  /* 1px */
+    --stroke-weight-2: 0.125rem;   /* 2px */
+    --stroke-weight-3: 0.1875rem;  /* 3px */
+
+    /* ── Spacing scale (1 unit = 4px = 0.25rem) ── */
+    --space-0:    0rem;
+    --space-1:    0.25rem;   /* 4px */
+    --space-2:    0.5rem;    /* 8px */
+    --space-2-25: 0.5625rem; /* 9px */
+    --space-2-5:  0.625rem;  /* 10px */
+    --space-3:    0.75rem;   /* 12px */
+    --space-3-5:  0.875rem;  /* 14px */
+    --space-4:    1rem;      /* 16px */
+    --space-5:    1.25rem;   /* 20px */
+    --space-6:    1.5rem;    /* 24px */
+    --space-8:    2rem;      /* 32px */
+    --space-10:   2.5rem;    /* 40px */
+    --space-12:   3rem;      /* 48px */
+    --space-layout-x: 1.92rem;  /* 30.72px - section horizontal padding */
+    --space-layout-y: 4.32rem;  /* 69.12px - section vertical padding */
+
+    /* ── Layout dimensions ── */
+    --layout-max:     82.5rem;     /* 1320px - max page width */
+    --layout-content: 42.5rem;    /* 680px */
+    --layout-card:    28.9722rem; /* 463.56px */
+    --header-height:  4.25rem;    /* 68px */
+    --page-gutter:    2.56rem;    /* 40.96px - desktop horizontal padding */
+
+    /* ── Transitions ── */
+    --transition-fast:     0.2s;
+    --transition-normal:   0.3s;
+    --transition-slow:     0.35s;
+    --transition-carousel: 0.42s;
+
+    /* ── Border radius ── */
+    --radius-sm: 2px;
+    --radius-md: 4px;
 }
