@@ -1,7 +1,7 @@
 .tertiaryButton{
     --tertiary-button-padding-y: clamp(0.75rem, 2.5vw, 0.875rem);
     --tertiary-button-padding-x: clamp(0.25rem, 3vw, 0.75rem);
-    --tertiary-button-font-size: clamp(1rem, 3.5vw, var(--text-xl));
+    --tertiary-button-font-size: clamp(var(--text-md), 3.5vw, var(--text-lg));
 
     display: inline-flex;
     padding: var(--tertiary-button-padding-y) var(--tertiary-button-padding-x);
