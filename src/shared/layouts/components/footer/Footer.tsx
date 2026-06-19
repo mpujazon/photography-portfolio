@@ -43,7 +43,7 @@ function Footer() {
                 </a>
                 <a
                     className={style.socialLink}
-                    href="mailto:mpujazoncardenas@gmail.com"
+                    href="mailto:lensbymike.media@gmail.com"
                     aria-label={t('footer.email')}
                 >
                     <IconMail />
