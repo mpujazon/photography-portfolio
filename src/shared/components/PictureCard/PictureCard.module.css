@@ -1,0 +1,92 @@
+.pictureCard {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    outline: none;
+}
+
+.pictureCard:focus-visible {
+    box-shadow: inset 0 0 0 var(--stroke-weight-2) var(--color-yellow-62);
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: scale(1);
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.pictureCard:hover .image,
+.pictureCard:focus-visible .image {
+    transform: scale(1.05);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background var(--transition-slow) ease;
+    z-index: 1;
+}
+
+.overlayLabel {
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-family: var(--font-family-font-1), sans-serif;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity var(--transition-slow) ease, transform var(--transition-slow) ease;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.pictureCard:hover .overlay,
+.pictureCard:focus-visible .overlay {
+    background: rgba(0, 0, 0, 0.58);
+}
+
+.pictureCard:hover .overlayLabel,
+.pictureCard:focus-visible .overlayLabel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.metadata {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--color-near-black);
+    font-family: var(--font-family-font-3), sans-serif;
+    font-size: var(--text-xs);
+    letter-spacing: 0.08em;
+    padding: 7px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: opacity var(--transition-slow) ease;
+    z-index: 2;
+}
+
+.metadataId {
+    color: var(--color-yellow-62);
+}
+
+.metadataExif {
+    color: #ffffff;
+}
+
+.pictureCard:hover .metadata,
+.pictureCard:focus-visible .metadata {
+    opacity: 0;
+}
