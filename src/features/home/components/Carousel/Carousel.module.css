@@ -85,7 +85,7 @@
     display: flex;
     align-items: center;
     gap: var(--space-3);
-    max-width: min(92%, 22rem);
+    max-width: min(92%, 34rem);
     padding: 1.2rem var(--space-6);
     background: var(--color-caption-bg);
     color: var(--color-grey-56);
@@ -116,6 +116,11 @@
 }
 
 .captionCategory {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.captionExif {
     white-space: nowrap;
     flex-shrink: 0;
 }
@@ -257,7 +262,7 @@
         gap: 0.6rem;
         padding: var(--space-3-5) var(--space-4);
         font-size: 0.7rem;
-        max-width: min(95%, 22rem);
+        max-width: min(95%, 34rem);
     }
 
     .thumbnailStrip {

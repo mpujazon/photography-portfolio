@@ -1,18 +1,12 @@
 import {useEffect, useState} from "react";
 import style from "./Carousel.module.css"
 import { useTranslation } from "react-i18next";
+import type { PictureDto } from "../../../../shared/models/Picture";
 
 const AUTOPLAY_INTERVAL_MS = 4000;
 
 export type CarouselProps = {
-    pictures: Picture[];
-}
-
-interface Picture {
-    id: number;
-    url: string;
-    title: string;
-    category: string;
+    pictures: PictureDto[];
 }
 
 function Carousel({ pictures }: CarouselProps) {
@@ -57,10 +51,10 @@ function Carousel({ pictures }: CarouselProps) {
                     alt={currentPicture.title}
                 />
                 <figcaption className={style.imageCaption}>
-                    <span className={style.captionNumber}>NO. {pictureNumber}</span>
                     <span className={style.captionTitle}>{currentPicture.title}</span>
-                    <span aria-hidden="true" className={style.captionDot}>·</span>
-                    <span className={style.captionCategory}>{currentPicture.category.toUpperCase()}</span>
+                    {currentPicture.cameraSettings?.focalLength && currentPicture.cameraSettings?.shutterSpeed && (
+                        <span className={style.captionExif}>{currentPicture.cameraSettings.focalLength}MM · 1/{currentPicture.cameraSettings.shutterSpeed}{currentPicture.cameraSettings.aperture && ` · ${currentPicture.cameraSettings.aperture}`}</span>
+                    )}
                 </figcaption>
                 {pictures.length > 1 && (
                     <div
