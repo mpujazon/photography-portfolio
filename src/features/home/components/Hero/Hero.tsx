@@ -1,10 +1,10 @@
 import style from './Hero.module.css';
 import Carousel from "../Carousel/Carousel.tsx";
-import type { Picture } from '../../../../shared/models/Picture.ts';
+import type { PictureDto } from '../../../../shared/models/Picture.ts';
 import { HeroTextContent } from "../HeroTextContent/HeroTextContent.tsx";
 
 type HeroProps = {
-    pictures: Picture[]
+    pictures: PictureDto[]
 }
 
 export function Hero(heroProps: HeroProps) {
