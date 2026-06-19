@@ -1,6 +1,6 @@
-import type { PictureDto } from '../../../shared/models/Picture';
+import type { PhotoDto } from '../../../shared/models/Photo';
 
-const PICTURES: PictureDto[] = [
+const PHOTOS: PhotoDto[] = [
     {
         id: 5,
         url: "https://res.cloudinary.com/urbancore/image/upload/v1778750333/wwmd21mnx029mblyzqac.jpg",
@@ -131,6 +131,6 @@ const PICTURES: PictureDto[] = [
     },
 ];
 
-export function usePictures(): PictureDto[] {
-    return PICTURES;
+export function usePhotos(): PhotoDto[] {
+    return PHOTOS;
 }

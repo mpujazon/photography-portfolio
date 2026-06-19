@@ -3,10 +3,10 @@ import style from "./FeaturedAlbum.module.css";
 import TertiaryButton from "../../../../shared/components/buttons/tertiary/TertiaryButton";
 import { useNavigate } from "react-router";
 import Gallery from "../../../../shared/components/Gallery/Gallery";
-import type { PictureDto } from "../../../../shared/models/Picture";
+import type { PhotoDto } from "../../../../shared/models/Photo";
 
 type FeaturedAlbumProps = {
-    pictures: PictureDto[];
+    photos: PhotoDto[];
 }
 
 function FeaturedAlbum(props: FeaturedAlbumProps) {
@@ -30,7 +30,7 @@ function FeaturedAlbum(props: FeaturedAlbumProps) {
                         onClick={() => navigate("/albums")}
                     />
                 </header>
-                <Gallery pictures={props.pictures}/>
+                <Gallery photos={props.photos}/>
             </div>
         </section>
     )

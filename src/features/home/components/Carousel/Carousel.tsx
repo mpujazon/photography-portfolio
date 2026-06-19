@@ -1,64 +1,64 @@
 import {useEffect, useState} from "react";
 import style from "./Carousel.module.css"
 import { useTranslation } from "react-i18next";
-import type { PictureDto } from "../../../../shared/models/Picture";
+import type { PhotoDto } from "../../../../shared/models/Photo";
 
 const AUTOPLAY_INTERVAL_MS = 4000;
 
 export type CarouselProps = {
-    pictures: PictureDto[];
+    photos: PhotoDto[];
 }
 
-function Carousel({ pictures }: CarouselProps) {
-    const [currentPictureIndex, setCurrentPictureIndex] = useState(0);
-    const activePictureIndex = pictures.length > 0 ? currentPictureIndex % pictures.length : 0;
-    const currentPicture = pictures[activePictureIndex];
+function Carousel({ photos }: CarouselProps) {
+    const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
+    const activePhotoIndex = photos.length > 0 ? currentPhotoIndex % photos.length : 0;
+    const currentPhoto = photos[activePhotoIndex];
     const { t } = useTranslation('home');
 
     useEffect(() => {
-        if (pictures.length <= 1) return;
+        if (photos.length <= 1) return;
 
         const intervalId = window.setInterval(() => {
-            setCurrentPictureIndex((i) => (i + 1) % pictures.length);
+            setCurrentPhotoIndex((i) => (i + 1) % photos.length);
         }, AUTOPLAY_INTERVAL_MS);
 
         return () => window.clearInterval(intervalId);
-    }, [pictures.length]);
+    }, [photos.length]);
 
-    if (!currentPicture) return null;
+    if (!currentPhoto) return null;
 
-    const pictureNumber = String(activePictureIndex + 1).padStart(3, "0");
+    const photoNumber = String(activePhotoIndex + 1).padStart(3, "0");
 
     return (
         <div className={style.carouselContainer}>
-            <div 
+            <div
                 className={style.frameHeader}
                 aria-label={t('carousel.frameAria',{
-                    current: activePictureIndex + 1,
-                    total: pictures.length
+                    current: activePhotoIndex + 1,
+                    total: photos.length
                 })}
             >
                 <div className={style.decorativeSquare} aria-hidden="true" />
                 <p aria-hidden="true">
-                    {t('carousel.frame')} <span className={style.frameNumber}>{String(activePictureIndex + 1).padStart(3, "0")}</span> / {String(pictures.length).padStart(3, "0")}
+                    {t('carousel.frame')} <span className={style.frameNumber}>{String(activePhotoIndex + 1).padStart(3, "0")}</span> / {String(photos.length).padStart(3, "0")}
                 </p>
             </div>
             <figure className={style.mainFrame}>
                 <img
-                    key={currentPicture.id}
+                    key={currentPhoto.id}
                     className={style.currentImage}
-                    src={currentPicture.url}
-                    alt={currentPicture.title}
+                    src={currentPhoto.url}
+                    alt={currentPhoto.title}
                 />
                 <figcaption className={style.imageCaption}>
-                    <span className={style.captionTitle}>{currentPicture.title}</span>
-                    {currentPicture.cameraSettings?.focalLength && currentPicture.cameraSettings?.shutterSpeed && (
-                        <span className={style.captionExif}>{currentPicture.cameraSettings.focalLength}MM · 1/{currentPicture.cameraSettings.shutterSpeed}{currentPicture.cameraSettings.aperture && ` · ${currentPicture.cameraSettings.aperture}`}</span>
+                    <span className={style.captionTitle}>{currentPhoto.title}</span>
+                    {currentPhoto.cameraSettings?.focalLength && currentPhoto.cameraSettings?.shutterSpeed && (
+                        <span className={style.captionExif}>{currentPhoto.cameraSettings.focalLength}MM · 1/{currentPhoto.cameraSettings.shutterSpeed}{currentPhoto.cameraSettings.aperture && ` · ${currentPhoto.cameraSettings.aperture}`}</span>
                     )}
                 </figcaption>
-                {pictures.length > 1 && (
+                {photos.length > 1 && (
                     <div
-                        key={activePictureIndex}
+                        key={activePhotoIndex}
                         className={style.progressBar}
                         aria-hidden="true"
                     />
@@ -66,19 +66,19 @@ function Carousel({ pictures }: CarouselProps) {
             </figure>
 
             <div className={style.thumbnailStrip} aria-label={t('carousel.carouselThumbnails')}>
-                {pictures.map((picture, index) => (
+                {photos.map((photo, index) => (
                     <button
-                        className={`${style.thumbnailButton} ${index === activePictureIndex ? style.thumbnailButtonActive : ""}`}
+                        className={`${style.thumbnailButton} ${index === activePhotoIndex ? style.thumbnailButtonActive : ""}`}
                         type="button"
-                        key={picture.id}
-                        onClick={() => setCurrentPictureIndex(index)}
-                        aria-label={t('carousel.showPicture', {pictureTitle: picture.title})}
-                        aria-current={index === activePictureIndex ? "true" : undefined}
+                        key={photo.id}
+                        onClick={() => setCurrentPhotoIndex(index)}
+                        aria-label={t('carousel.showPhoto', {photoTitle: photo.title})}
+                        aria-current={index === activePhotoIndex ? "true" : undefined}
                     >
                         <img
                             className={style.thumbnailImage}
-                            src={picture.url}
-                            alt={picture.title}
+                            src={photo.url}
+                            alt={photo.title}
                         />
                     </button>
                 ))}

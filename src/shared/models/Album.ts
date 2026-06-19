@@ -1,4 +1,4 @@
-import { type PictureDto } from './Picture';
+import { type PhotoDto } from './Photo';
 
 export interface AlbumDto {
     id:           number;
@@ -10,5 +10,5 @@ export interface AlbumDto {
 }
 
 export interface AlbumDetailDto extends AlbumDto {
-    pictures: PictureDto[];
+    photos: PhotoDto[];
 }

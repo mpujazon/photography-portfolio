@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import type { PictureDto } from "../../models/Picture";
+import type { PhotoDto } from "../../models/Photo";
 import styles from "./Visualizer.module.css";
 import { useDragZoom } from "./hooks/useDragZoom";
 import { useVisualizerKeyboard } from "./hooks/useVisualizerKeyboard";
@@ -7,16 +7,16 @@ import VisualizerPanel from "./VisualizerPanel";
 import { useTranslation } from "react-i18next";
 
 type VisualizerProps = {
-    pictures:     PictureDto[];
+    photos:       PhotoDto[];
     currentIndex: number;
     onClose:      () => void;
     onNavigate:   (index: number) => void;
 };
 
-function Visualizer({ pictures, currentIndex, onClose, onNavigate }: VisualizerProps) {
+function Visualizer({ photos, currentIndex, onClose, onNavigate }: VisualizerProps) {
     const { t } = useTranslation("common");
-    const picture = pictures[currentIndex];
-    const total   = pictures.length;
+    const photo  = photos[currentIndex];
+    const total  = photos.length;
     const hasPrev = currentIndex > 0;
     const hasNext = currentIndex < total - 1;
 
@@ -60,8 +60,8 @@ function Visualizer({ pictures, currentIndex, onClose, onNavigate }: VisualizerP
                     >
                         <img
                             className={`${styles.image} ${isZoomed ? styles.imageZoomed : ""}`}
-                            src={picture.url}
-                            alt={picture.title}
+                            src={photo.url}
+                            alt={photo.title}
                             draggable={false}
                         />
                     </div>
@@ -81,7 +81,7 @@ function Visualizer({ pictures, currentIndex, onClose, onNavigate }: VisualizerP
                 </div>
 
                 <VisualizerPanel
-                    picture={picture}
+                    photo={photo}
                     currentIndex={currentIndex}
                     total={total}
                     onClose={onClose}

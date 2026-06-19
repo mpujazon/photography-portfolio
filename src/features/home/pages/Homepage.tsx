@@ -1,14 +1,14 @@
 import FeaturedAlbum from "../components/FeaturedAlbum/FeaturedAlbum.tsx";
 import {Hero} from "../components/Hero/Hero.tsx";
 import BehindTheLens from "../components/BehindTheLens/BehindTheLens.tsx";
-import { usePictures } from "../hooks/usePictures";
+import { usePhotos } from "../hooks/usePhotos";
 
 export function Homepage() {
-    const pictures = usePictures();
+    const photos = usePhotos();
     return (
         <>
-            <Hero pictures={pictures}/>
-            <FeaturedAlbum pictures={pictures}/>
+            <Hero photos={photos}/>
+            <FeaturedAlbum photos={photos}/>
             <BehindTheLens />
         </>
     );

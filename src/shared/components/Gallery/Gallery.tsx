@@ -1,23 +1,23 @@
 import { useEffect } from "react";
 import { useSearchParams } from "react-router";
-import PictureCard from "../PictureCard/PictureCard";
+import PhotoCard from "../PhotoCard/PhotoCard";
 import Visualizer from "../Visualizer/Visualizer";
-import type { PictureDto } from "../../models/Picture";
+import type { PhotoDto } from "../../models/Photo";
 import style from "./Gallery.module.css";
 
 type GalleryProps = {
-    pictures: PictureDto[];
+    photos: PhotoDto[];
 }
 
-function Gallery({ pictures }: GalleryProps) {
+function Gallery({ photos }: GalleryProps) {
     const [searchParams, setSearchParams] = useSearchParams();
     const photoId = searchParams.get("photo");
     const openIndex = photoId !== null
-        ? pictures.findIndex(p => String(p.id) === photoId)
+        ? photos.findIndex(p => String(p.id) === photoId)
         : -1;
 
-    const openPicture = (index: number) => setSearchParams({ photo: String(pictures[index].id) });
-    const closePicture = () => setSearchParams({});
+    const openPhoto = (index: number) => setSearchParams({ photo: String(photos[index].id) });
+    const closePhoto = () => setSearchParams({});
 
     useEffect(() => {
         if (photoId !== null && openIndex === -1) setSearchParams({});
@@ -26,21 +26,21 @@ function Gallery({ pictures }: GalleryProps) {
     return (
         <>
             <div className={style.gallery}>
-                {pictures.map((picture, index) => (
-                    <PictureCard
-                        key={picture.id}
-                        picture={picture}
-                        onClick={() => openPicture(index)}
+                {photos.map((photo, index) => (
+                    <PhotoCard
+                        key={photo.id}
+                        photo={photo}
+                        onClick={() => openPhoto(index)}
                     />
                 ))}
             </div>
 
             {openIndex !== -1 && (
                 <Visualizer
-                    pictures={pictures}
+                    photos={photos}
                     currentIndex={openIndex}
-                    onClose={closePicture}
-                    onNavigate={openPicture}
+                    onClose={closePhoto}
+                    onNavigate={openPhoto}
                 />
             )}
         </>

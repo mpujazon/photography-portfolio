@@ -20,13 +20,13 @@
         "px500": "View portfolio on 500px",
         "email": "Send an email"
     },
-    "pictureCard":{
-        "ariaViewPicture": "View picture:",
-        "viewPicture": "View picture"
+    "photoCard":{
+        "ariaViewPhoto": "View photo:",
+        "viewPhoto": "View photo"
     },
     "visualizer": {
-        "ariaPrevious": "Previous picture",
-        "ariaNext": "Next picture",
+        "ariaPrevious": "Previous photo",
+        "ariaNext": "Next photo",
         "ariaZoomOut": "Zoom out",
         "ariaZoomIn": "Zoom in"
     },
@@ -41,7 +41,7 @@
         "shutter": "Shutter",
         "iso": "ISO",
         "share": "share",
-        "ariaShare": "Copy link to this picture",
+        "ariaShare": "Copy link to this photo",
         "linkCopied": "Link copied ✓",
         "copyLink": "Copy link",
         "currentImage": "Image {{currentImage}} of {{total}}"

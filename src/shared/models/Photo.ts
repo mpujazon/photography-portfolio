@@ -1,4 +1,4 @@
-export interface PictureDto {
+export interface PhotoDto {
     id:                 number;
     url:                string;
     title:              string;
