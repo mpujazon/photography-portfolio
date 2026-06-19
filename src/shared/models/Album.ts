@@ -4,9 +4,9 @@ export interface AlbumDto {
     id:           number;
     slug:         string;
     title:        string;
-    coverUrl:     string;
-    isFeatured:   boolean;
     description?: string;
+    coverPhotoUrl?:     string;
+    isFeatured:   boolean;
 }
 
 export interface AlbumDetailDto extends AlbumDto {
