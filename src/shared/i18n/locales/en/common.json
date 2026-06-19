@@ -19,5 +19,32 @@
         "instagram": "Follow on Instagram",
         "px500": "View portfolio on 500px",
         "email": "Send an email"
+    },
+    "pictureCard":{
+        "ariaViewPicture": "View picture:",
+        "viewPicture": "View picture"
+    },
+    "visualizer": {
+        "ariaPrevious": "Previous picture",
+        "ariaNext": "Next picture",
+        "ariaZoomOut": "Zoom out",
+        "ariaZoomIn": "Zoom in"
+    },
+    "visualizerPanel":{
+        "idLabel": "NO.",
+        "ariaClose": "Close",
+        "captureDataLabel":"Capture data",
+        "body": "Body",
+        "lens": "Lens",
+        "focalLength": "Focal length",
+        "aperture": "Aperture",
+        "shutter": "Shutter",
+        "iso": "ISO",
+        "share": "share",
+        "ariaShare": "Copy link to this picture",
+        "linkCopied": "Link copied ✓",
+        "copyLink": "Copy link",
+        "currentImage": "Image {{currentImage}} of {{total}}"
+
     }
 }

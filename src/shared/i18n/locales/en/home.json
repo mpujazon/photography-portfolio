@@ -17,5 +17,13 @@
         "subtitle": "Selected frames",
         "title": "Featured <0>work</0>",
         "allAlbumsCTA": "All albums"
+    },
+    "behindTheLens":{
+        "imageAlt": "Behind the lens",
+        "subtitle": "Behind the lens",
+        "quote": "\"Light is the only material. Everything else is patience — and being in the right place a half-second early.\"",
+        "paragraph": "I'm Miguel. I work trackside and on foot, between the noise of a race weekend and the quiet of an empty street at dawn. The camera doesn't lie — I just try to point it honestly.",
+        "catalonia": "Catalonia"
+
     }
 }
