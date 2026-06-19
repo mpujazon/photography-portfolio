@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { createPortal } from "react-dom";
 import { navLinks } from "./navLinks.ts";
 import { NavLink } from "react-router";
 import styles from "./Header.module.css";
@@ -10,6 +11,7 @@ function Header() {
     const { t } = useTranslation("common");
 
     return (
+        <>
         <header className={styles.container}>
             <HeaderBrand />
 
@@ -41,13 +43,16 @@ function Header() {
                 <span className={styles.line} aria-hidden="true" />
             </button>
 
-            <div 
+        </header>
+
+        {createPortal(
+            <div
                 id="mobile-navigation"
                 className={`${styles.mobileMenu} ${isOpen ? styles.mobileMenuOpen : ""}`}
                 aria-hidden={!isOpen}
                 inert={!isOpen}
             >
-                <nav 
+                <nav
                     className={styles.mobileNav}
                     aria-label={t('nav.ariaLabel')}
                 >
@@ -62,8 +67,10 @@ function Header() {
                         </NavLink>
                     ))}
                 </nav>
-            </div>
-        </header>
+            </div>,
+            document.body
+        )}
+        </>
     );
 }
 
