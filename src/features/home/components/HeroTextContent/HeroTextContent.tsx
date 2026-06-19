@@ -7,7 +7,6 @@ import { useTranslation } from 'react-i18next';
 export function HeroTextContent() {
     const navigate = useNavigate();
     const { t } = useTranslation('home');
-
     return (
         <div className={style.heroFirstColumn}>
             <p

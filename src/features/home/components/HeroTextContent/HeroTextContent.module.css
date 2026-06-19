@@ -40,7 +40,7 @@
 .heroBrandName {
     color: var(--color-white-solid);
     font-family: var(--font-family-font-1), sans-serif;
-    font-size: clamp(4rem, 21vw, 7.25rem);
+    font-size: clamp(4rem, 21vw, 9rem);
     font-weight: var(--font-weight-900);
     line-height: 0.8;
     letter-spacing: clamp(-0.123rem, -0.5vw, -0.04rem);
