@@ -1,25 +1,10 @@
+import type { ButtonHTMLAttributes } from "react";
+import Button from "../Button";
 import style from "./PrimaryButton.module.css";
-import type {ButtonHTMLAttributes} from "react";
 
-type PrimaryButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-    label: string;
-}
+type PrimaryButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & { label: string };
 
-function PrimaryButton({
-    label,
-    type = "button",
-    ...props
-}: PrimaryButtonProps) {
-    return (
-        <button
-            type={type}
-            className={ style.primaryButton }
-            {...props}
-        >
-            { label }
-            <span aria-hidden="true">→</span>
-        </button>
-    );
-}
+const PrimaryButton = (props: PrimaryButtonProps) =>
+    <Button {...props} className={style.primaryButton} withArrow />;
 
 export default PrimaryButton;

@@ -1,24 +1,10 @@
+import type { ButtonHTMLAttributes } from "react";
+import Button from "../Button";
 import style from "./SecondaryButton.module.css";
-import type {ButtonHTMLAttributes} from "react";
 
-type SecondaryButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-    label: string;
-}
+type SecondaryButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & { label: string };
 
-function SecondaryButton({
-    label,
-    type = "button",
-    ...props
-}: SecondaryButtonProps) {
-    return (
-        <button
-            type={type}
-            className={ style.secondaryButton }
-            {...props}
-        >
-            { label }
-        </button>
-    );
-}
+const SecondaryButton = (props: SecondaryButtonProps) =>
+    <Button {...props} className={style.secondaryButton} />;
 
 export default SecondaryButton;

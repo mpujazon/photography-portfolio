@@ -1,25 +1,10 @@
+import type { ButtonHTMLAttributes } from "react";
+import Button from "../Button";
 import style from "./TertiaryButton.module.css";
-import type {ButtonHTMLAttributes} from "react";
 
-type TertiaryButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-    label: string;
-}
+type TertiaryButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & { label: string };
 
-function TertiaryButton({
-    label,
-    type = "button",
-    ...props
-}: TertiaryButtonProps) {
-    return (
-        <button
-            type={type}
-            className={ style.tertiaryButton }
-            {...props}
-        >
-            { label }
-            <span aria-hidden="true">→</span>
-        </button>
-    );
-}
+const TertiaryButton = (props: TertiaryButtonProps) =>
+    <Button {...props} className={style.tertiaryButton} withArrow />;
 
 export default TertiaryButton;
