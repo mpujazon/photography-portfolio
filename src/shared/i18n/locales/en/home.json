@@ -13,9 +13,8 @@
         "carouselThumbnails": "Carousel thumbnails",
         "showPicture": "Show {{pictureTitle}} picture"
     },
-    "featuredWork": {
-        "subtitle": "Selected frames",
-        "title": "Featured <0>work</0>",
+    "featuredAlbum": {
+        "title": "Featured <0>album</0>",
         "allAlbumsCTA": "All albums"
     },
     "behindTheLens":{

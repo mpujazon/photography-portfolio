@@ -18,15 +18,15 @@ function FeaturedAlbum(props: FeaturedAlbumProps) {
             <div className={style.featuredAlbumShell}>
                 <header className={style.header}>
                     <div className={style.header__textContainer}>
-                        <span className={style.header__subtitle}>{t("featuredWork.subtitle")}</span>
+                        <span className={style.header__subtitle}>ALBUM NAMe</span>
                         <h2 className={style.header__title}>
-                            <Trans i18nKey="featuredWork.title" t={t}>
+                            <Trans i18nKey="featuredAlbum.title" t={t}>
                                 <span className={style.yellow}></span>
                             </Trans>
                         </h2>
                     </div>
                     <TertiaryButton
-                        label={t("featuredWork.allAlbumsCTA") }
+                        label={t("featuredAlbum.allAlbumsCTA") }
                         onClick={() => navigate("/albums")}
                     />
                 </header>
