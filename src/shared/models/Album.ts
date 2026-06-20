@@ -1,6 +1,6 @@
 import { type PhotoDto } from './Photo';
 
-export interface AlbumDto {
+export interface PublicAlbum {
     id:           number;
     slug:         string;
     title:        string;
@@ -9,6 +9,6 @@ export interface AlbumDto {
     isFeatured:   boolean;
 }
 
-export interface AlbumDetailDto extends AlbumDto {
+export interface PublicAlbumDetail extends PublicAlbum {
     photos: PhotoDto[];
 }
