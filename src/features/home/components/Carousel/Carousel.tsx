@@ -53,7 +53,7 @@ function Carousel({ photos }: CarouselProps) {
                 <figcaption className={style.imageCaption}>
                     <span className={style.captionTitle}>{currentPhoto.title}</span>
                     {currentPhoto.cameraSettings?.focalLength && currentPhoto.cameraSettings?.shutterSpeed && (
-                        <span className={style.captionExif}>{currentPhoto.cameraSettings.focalLength}MM · 1/{currentPhoto.cameraSettings.shutterSpeed}{currentPhoto.cameraSettings.aperture && ` · ${currentPhoto.cameraSettings.aperture}`}</span>
+                        <span className={style.captionExif}>{currentPhoto.cameraSettings.focalLength} · {currentPhoto.cameraSettings.shutterSpeed}{currentPhoto.cameraSettings.aperture && ` · ${currentPhoto.cameraSettings.aperture}`}</span>
                     )}
                 </figcaption>
                 {photos.length > 1 && (

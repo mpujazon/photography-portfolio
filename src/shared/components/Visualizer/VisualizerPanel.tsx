@@ -40,11 +40,11 @@ function VisualizerPanel({ photo, currentIndex, total, onClose }: VisualizerPane
             <p className={styles.sectionLabel}>EXIF · {t("visualizerPanel.captureDataLabel")}</p>
 
             <div className={styles.exifGrid}>
-                {photo.cameraSettings?.cameraBody   && <div className={styles.exifItem}><span className={styles.exifLabel}>{t("visualizerPanel.body")}</span><span className={styles.exifValue}>{photo.cameraSettings.cameraBody}</span></div>}
+                {photo.cameraSettings?.camera   && <div className={styles.exifItem}><span className={styles.exifLabel}>{t("visualizerPanel.body")}</span><span className={styles.exifValue}>{photo.cameraSettings.camera}</span></div>}
                 {photo.cameraSettings?.lens         && <div className={styles.exifItem}><span className={styles.exifLabel}>{t("visualizerPanel.lens")}</span><span className={styles.exifValue}>{photo.cameraSettings.lens}</span></div>}
-                {photo.cameraSettings?.focalLength  && <div className={styles.exifItem}><span className={styles.exifLabel}>{t("visualizerPanel.focalLength")}</span><span className={styles.exifValue}>{photo.cameraSettings.focalLength}mm</span></div>}
+                {photo.cameraSettings?.focalLength  && <div className={styles.exifItem}><span className={styles.exifLabel}>{t("visualizerPanel.focalLength")}</span><span className={styles.exifValue}>{photo.cameraSettings.focalLength}</span></div>}
                 {photo.cameraSettings?.aperture     && <div className={styles.exifItem}><span className={styles.exifLabel}>{t("visualizerPanel.aperture")}</span><span className={styles.exifValue}>{photo.cameraSettings.aperture}</span></div>}
-                {photo.cameraSettings?.shutterSpeed && <div className={styles.exifItem}><span className={styles.exifLabel}>{t("visualizerPanel.shutter")}</span><span className={styles.exifValue}>1/{photo.cameraSettings.shutterSpeed}</span></div>}
+                {photo.cameraSettings?.shutterSpeed && <div className={styles.exifItem}><span className={styles.exifLabel}>{t("visualizerPanel.shutter")}</span><span className={styles.exifValue}>{photo.cameraSettings.shutterSpeed}</span></div>}
                 {photo.cameraSettings?.iso          && <div className={styles.exifItem}><span className={styles.exifLabel}>{t("visualizerPanel.iso")}</span><span className={styles.exifValue}>{photo.cameraSettings.iso}</span></div>}
             </div>
 
