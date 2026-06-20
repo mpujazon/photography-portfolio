@@ -9,7 +9,7 @@ export interface PhotoDto {
 }
 
 interface CameraSettings {
-    cameraBody?:   string;
+    camera?:   string;
     lens?:         string;
     focalLength?:  number;
     shutterSpeed?: number;
