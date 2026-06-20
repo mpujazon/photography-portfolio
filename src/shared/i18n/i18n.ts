@@ -3,6 +3,7 @@ import { initReactI18next } from "react-i18next";
 
 import enCommon from "./locales/en/common.json";
 import enHome from "./locales/en/home.json";
+import enAlbums from "./locales/en/albums.json";
 
 i18n
     .use(initReactI18next)
@@ -14,6 +15,7 @@ i18n
             en: {
                 common: enCommon,
                 home: enHome,
+                albums: enAlbums,
             },
         },
         interpolation: {
