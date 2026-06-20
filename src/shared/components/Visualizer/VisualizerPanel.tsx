@@ -40,7 +40,7 @@ function VisualizerPanel({ photo, currentIndex, total, onClose }: VisualizerPane
             <p className={styles.sectionLabel}>EXIF · {t("visualizerPanel.captureDataLabel")}</p>
 
             <div className={styles.exifGrid}>
-                {photo.cameraSettings?.camera   && <div className={styles.exifItem}><span className={styles.exifLabel}>{t("visualizerPanel.body")}</span><span className={styles.exifValue}>{photo.cameraSettings.camera}</span></div>}
+                {photo.cameraSettings?.camera       && <div className={styles.exifItem}><span className={styles.exifLabel}>{t("visualizerPanel.body")}</span><span className={styles.exifValue}>{photo.cameraSettings.camera}</span></div>}
                 {photo.cameraSettings?.lens         && <div className={styles.exifItem}><span className={styles.exifLabel}>{t("visualizerPanel.lens")}</span><span className={styles.exifValue}>{photo.cameraSettings.lens}</span></div>}
                 {photo.cameraSettings?.focalLength  && <div className={styles.exifItem}><span className={styles.exifLabel}>{t("visualizerPanel.focalLength")}</span><span className={styles.exifValue}>{photo.cameraSettings.focalLength}</span></div>}
                 {photo.cameraSettings?.aperture     && <div className={styles.exifItem}><span className={styles.exifLabel}>{t("visualizerPanel.aperture")}</span><span className={styles.exifValue}>{photo.cameraSettings.aperture}</span></div>}
