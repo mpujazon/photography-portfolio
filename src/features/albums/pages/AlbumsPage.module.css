@@ -1,0 +1,9 @@
+.page{
+    padding-inline: var(--space-layout-x);
+}
+
+@media (min-width: 768px) {
+    .page{
+        padding-inline: var(--page-gutter);
+    }
+}
