@@ -2,6 +2,7 @@ import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import type { PublicAlbum } from '../../../../shared/models/Album';
 import styles from './AlbumCard.module.css';
+import { cloudinarySrc } from '../../../../shared/utils/cloudinary';
 
 type AlbumCardProps = {
     album: PublicAlbum;
@@ -33,9 +34,11 @@ function AlbumCard({ album, index }: AlbumCardProps) {
             <div className={styles.coverContainer}>
                 {album.coverPhotoUrl && (
                     <img
-                        src={album.coverPhotoUrl}
+                        src={cloudinarySrc(album.coverPhotoUrl, 800)}
                         alt=""
                         className={styles.coverImage}
+                        loading="lazy"
+                        decoding="async"
                     />
                 )}
                 <div className={styles.coverOverlay} aria-hidden="true">

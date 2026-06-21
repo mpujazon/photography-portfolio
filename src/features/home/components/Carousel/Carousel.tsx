@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import style from "./Carousel.module.css"
 import { useTranslation } from "react-i18next";
 import type { PhotoDto } from "../../../../shared/models/Photo";
+import { cloudinarySrc } from "../../../../shared/utils/cloudinary";
 
 const AUTOPLAY_INTERVAL_MS = 4000;
 
@@ -47,8 +48,10 @@ function Carousel({ photos }: CarouselProps) {
                 <img
                     key={currentPhoto.id}
                     className={style.currentImage}
-                    src={currentPhoto.url}
+                    src={cloudinarySrc(currentPhoto.url, 1600)}
                     alt={currentPhoto.title}
+                    decoding="async"
+                    fetchPriority="high"
                 />
                 <figcaption className={style.imageCaption}>
                     <span className={style.captionTitle}>{currentPhoto.title}</span>
@@ -77,8 +80,10 @@ function Carousel({ photos }: CarouselProps) {
                     >
                         <img
                             className={style.thumbnailImage}
-                            src={photo.url}
+                            src={cloudinarySrc(photo.url, 200)}
                             alt={photo.title}
+                            loading="lazy"
+                            decoding="async"
                         />
                     </button>
                 ))}
