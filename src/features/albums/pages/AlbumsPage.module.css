@@ -7,3 +7,15 @@
         padding-inline: var(--page-gutter);
     }
 }
+
+.albumsList{
+    border-top: var(--stroke-weight-1) solid var(--color-grey-25)
+}
+
+.emptyState {
+    padding: var(--space-8) 0;
+    color: var(--color-grey-56);
+    font-family: var(--font-family-font-4);
+    font-size: var(--text-md);
+    line-height: var(--line-height-24);
+}
