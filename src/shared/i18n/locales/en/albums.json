@@ -7,5 +7,12 @@
     "albumCard": {
         "frames": "frames"
     },
-    "emptyState": "No albums published yet. Come back soon."
+    "emptyState": "No albums published yet. Come back soon.",
+    "detail": {
+        "meta": {
+            "category": "Category",
+            "gear": "Gear",
+            "frames": "Frames"
+        }
+    }
 }
