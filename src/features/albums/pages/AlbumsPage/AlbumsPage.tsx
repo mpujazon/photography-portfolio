@@ -1,9 +1,9 @@
 import { useTranslation } from "react-i18next";
-import ErrorMessage from "../../../shared/components/ErrorMessage/ErrorMessage";
-import AlbumCard from "../components/AlbumCard/AlbumCard";
-import AlbumCardSkeleton from "../components/AlbumCard/AlbumCardSkeleton";
-import AlbumsPageHeader from "../components/AlbumsPageHeader/AlbumsPageHeader";
-import { usePublicAlbums } from "../hooks/usePublicAlbums";
+import ErrorMessage from "../../../../shared/components/ErrorMessage/ErrorMessage";
+import AlbumCard from "../../components/AlbumCard/AlbumCard";
+import AlbumCardSkeleton from "../../components/AlbumCard/AlbumCardSkeleton";
+import AlbumsPageHeader from "../../components/AlbumsPageHeader/AlbumsPageHeader";
+import { usePublicAlbums } from "../../hooks/usePublicAlbums";
 import style from "./AlbumsPage.module.css";
 
 function AlbumsPage() {

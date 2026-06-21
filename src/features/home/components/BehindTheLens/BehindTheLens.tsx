@@ -10,6 +10,8 @@ function BehindTheLens() {
                     className={styles.image}
                     src="/BehindTheLens.jpg"
                     alt={t("behindTheLens.imageAlt")}
+                    loading="lazy"
+                    decoding="async"
                 />
             </div>
 
