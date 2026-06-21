@@ -1,0 +1,185 @@
+.card {
+    position: relative;
+    display: grid;
+    grid-template-areas:
+        "number info"
+        "cover  cover";
+    grid-template-columns: auto 1fr;
+    column-gap: var(--space-4);
+    row-gap: var(--space-3);
+    padding: var(--space-4) 0;
+    border-bottom: var(--stroke-weight-1) solid var(--color-grey-25);
+    align-items: start;
+    cursor: pointer;
+}
+
+/* ── Stretched link: covers the entire card ── */
+.cardLink {
+    color: inherit;
+    text-decoration: none;
+    outline: none;
+}
+
+.cardLink::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.albumNumber {
+    grid-area: number;
+    color: var(--color-grey-38);
+    font-family: var(--font-family-font-1);
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-900);
+    line-height: 1;
+    transition: color var(--transition-fast);
+}
+
+.albumInfo {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+    padding-block: var(--space-6);
+    min-width: 0;
+}
+
+.title {
+    width: 100%;
+    color: var(--color-white-solid);
+    font-family: var(--font-family-font-1);
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-900);
+    line-height: 1;
+    letter-spacing: var(--letter-spacing--0-2);
+    text-transform: uppercase;
+    transition: color var(--transition-fast);
+}
+
+.subtitle {
+    color: var(--color-grey-56);
+    font-family: var(--font-family-font-3);
+    font-size: var(--text-xs);
+    font-weight: var(--font-weight-400);
+    line-height: var(--line-height-17-6);
+    letter-spacing: var(--letter-spacing-1-1);
+    text-transform: uppercase;
+}
+
+.paragraph {
+    width: 100%;
+    color: var(--color-grey-56);
+    font-family: var(--font-family-font-4);
+    font-size: var(--text-md);
+    font-weight: var(--font-weight-400);
+    line-height: var(--line-height-24);
+}
+
+.coverContainer {
+    grid-area: cover;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-grey-25);
+    aspect-ratio: 16 / 9;
+}
+
+.coverImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: filter var(--transition-slow), transform var(--transition-slow);
+}
+
+@media (hover: hover) {
+    .coverImage {
+        filter: grayscale(40%);
+        transform: scale(1.04);
+    }
+}
+
+.coverOverlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: var(--space-2);
+    padding: var(--space-3);
+    background: linear-gradient(to top, rgba(5, 5, 5, 0.85) 0%, transparent 65%);
+}
+
+.yellow {
+    color: var(--color-yellow-62);
+    transition: transform var(--transition-fast);
+}
+
+/* ── Hover ── */
+.card:has(.cardLink:hover) .title {
+    color: var(--color-yellow-62);
+}
+
+.card:has(.cardLink:hover) .albumNumber {
+    color: var(--color-grey-56);
+}
+
+@media (hover: hover) {
+    .card:has(.cardLink:hover) .coverImage {
+        filter: grayscale(0%);
+        transform: scale(1);
+    }
+}
+
+.card:has(.cardLink:hover) .yellow {
+    transform: translateX(var(--space-1));
+}
+
+/* ── Focus (keyboard navigation) ── */
+.card:has(.cardLink:focus-visible) {
+    outline: var(--stroke-weight-2) solid var(--color-yellow-62);
+    outline-offset: var(--space-1);
+    border-radius: var(--radius-sm);
+}
+
+/* ── Active ── */
+.card:has(.cardLink:active) {
+    opacity: 0.7;
+}
+
+/* ── Tablet: switch to 3-column row, cover stretches full card height ── */
+@media (min-width: 640px) {
+    .card {
+        grid-template-areas: "number info cover";
+        grid-template-columns: auto 1fr auto;
+        gap: var(--space-5);
+        align-items: center;
+    }
+
+    .coverContainer {
+        width: 11rem;
+        aspect-ratio: auto;
+        align-self: stretch;
+    }
+}
+
+/* ── Desktop: bigger number, more breathing room, consistent card height ── */
+@media (min-width: 768px) {
+    .card {
+        padding: var(--space-6) 0;
+        gap: var(--space-6);
+        min-height: 9rem;
+    }
+
+    .albumNumber {
+        font-size: var(--text-2xl);
+        line-height: var(--line-height-32);
+    }
+
+    .coverContainer {
+        width: 17rem;
+    }
+}
