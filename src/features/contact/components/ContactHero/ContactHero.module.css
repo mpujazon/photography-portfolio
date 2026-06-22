@@ -20,10 +20,7 @@
 }
 
 .heading {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0 0.3em;
+    color: var(--color-white-solid);
     font-family: var(--font-family-font-1), sans-serif;
     font-size: clamp(2.75rem, 13vw, 5rem);
     font-weight: var(--font-weight-900);
@@ -31,10 +28,6 @@
     letter-spacing: clamp(-0.1rem, -0.4vw, -0.04rem);
     text-transform: uppercase;
     margin: 0;
-}
-
-.headingWhite {
-    color: var(--color-white-solid);
 }
 
 .headingAccent {
@@ -47,7 +40,7 @@
     font-size: clamp(0.9375rem, 1.5vw, 1.125rem);
     font-weight: var(--font-weight-400);
     line-height: var(--line-height-24);
-    max-width: 42rem;
+    max-width: 43rem;
     margin: 0;
 }
 
