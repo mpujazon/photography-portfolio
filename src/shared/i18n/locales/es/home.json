@@ -1,9 +1,9 @@
 {
     "hero": {
-        "eyebrow": "Deporte · Eventos · Fotografía urbana · Fotoperiodismo · Barcelona, ES",
+        "eyebrow": "Deporte · Eventos · Fotografía urbana · Fotoperiodismo · Barcelona",
         "eyebrowAria": "Fotógrafo de deporte, eventos, fotografía urbana y fotoperiodismo con base en Barcelona, España",
         "subtitle": "Fotografías de Miguel Pujazón Cárdenas",
-        "paragraph": "Me muevo entre la ciudad y el circuito, atento a esos momentos que aparecen sin avisar y se van igual de rápido. Una curva al límite, un desconocido a medio paso, una luz que dura medio segundo antes de que la ciudad se la lleve. No preparo la escena ni retoco más allá del color. Solo el encuadre que conseguí atrapar.",
+        "paragraph": "Me muevo entre la ciudad y el circuito, atento a esos momentos que aparecen sin avisar y se van igual de rápido. Una curva al límite, un desconocido a medio paso, una luz que dura medio segundo antes de que la ciudad se la lleve. No preparo la escena ni retoco más allá del color. Simplemente, mantengo la toma que capturé en cámara.",
         "ctaPrimary": "VER ÁLBUMES",
         "ctaSecondary": "CONTACTAR"
     },
@@ -21,7 +21,7 @@
         "imageAlt": "Detrás de la cámara",
         "subtitle": "Detrás de la cámara",
         "quote": "\"La luz es el único material. Todo lo demás es paciencia —y llegar al lugar exacto medio segundo antes.\"",
-        "paragraph": "Soy Miguel. Me muevo entre multitudes y calles vacías, entre la intensidad de un evento y la soledad de una ciudad al amanecer. La cámara no miente; yo solo intento apuntarla con honestidad.",
-        "catalonia": "Cataluña"
+        "paragraph": "Soy Miguel. Me muevo entre multitudes y calles vacías, entre la intensidad de un evento y la soledad de una ciudad al amanecer. La cámara no miente.",
+        "catalonia": "Catalunya"
     }
 }
