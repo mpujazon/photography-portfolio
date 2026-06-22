@@ -1,0 +1,194 @@
+.section {
+    width: min(100%, var(--layout-max));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-layout-y);
+    padding-top: var(--space-layout-y);
+    padding-bottom: var(--space-layout-y);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.label {
+    color: var(--color-grey-56);
+    font-family: var(--font-family-font-3), sans-serif;
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-400);
+    letter-spacing: var(--letter-spacing-1-44);
+    text-transform: uppercase;
+}
+
+.input,
+.textarea {
+    background: transparent;
+    border: var(--stroke-weight-1) solid var(--color-grey-25);
+    border-radius: var(--radius-md);
+    color: var(--color-white-solid);
+    font-family: var(--font-family-font-4), serif;
+    font-size: 1rem;
+    font-weight: var(--font-weight-400);
+    line-height: var(--line-height-24);
+    padding: var(--space-4) var(--space-5);
+    transition: border-color var(--transition-fast) ease-in-out;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+    color: var(--color-grey-38);
+}
+
+.input:disabled,
+.textarea:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .input:not(:disabled):hover,
+    .textarea:not(:disabled):hover {
+        border-color: var(--color-grey-38);
+    }
+}
+
+.input:focus:not(:focus-visible),
+.textarea:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.input:focus-visible,
+.textarea:focus-visible {
+    outline: none;
+    border-color: var(--color-yellow-62);
+    box-shadow: 0 0 0 3px rgba(242, 201, 76, 0.15);
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 10rem;
+}
+
+.successMessage {
+    color: var(--color-yellow-62);
+    font-family: var(--font-family-font-3), sans-serif;
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-400);
+    letter-spacing: var(--letter-spacing-1-44);
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.errorMessage {
+    color: #f28b62;
+    font-family: var(--font-family-font-3), sans-serif;
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-400);
+    letter-spacing: var(--letter-spacing-1-44);
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.submitButton {
+    align-self: stretch;
+    width: 100%;
+}
+
+.infoPanel {
+    display: flex;
+    flex-direction: column;
+}
+
+.infoRow {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-6) 0;
+    border-top: var(--stroke-weight-1) solid var(--color-border-subtle);
+}
+
+.infoRow:last-child {
+    border-bottom: var(--stroke-weight-1) solid var(--color-border-subtle);
+}
+
+.infoLabel {
+    color: var(--color-grey-56);
+    font-family: var(--font-family-font-3), sans-serif;
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-400);
+    letter-spacing: var(--letter-spacing-1-44);
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.infoValue {
+    color: var(--color-white-solid);
+    font-family: var(--font-family-font-1), sans-serif;
+    font-size: clamp(1.25rem, 3.5vw, 2rem);
+    font-weight: var(--font-weight-900);
+    letter-spacing: var(--letter-spacing--0-77);
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin: 0;
+    text-decoration: none;
+}
+
+a.infoValue {
+    transition: color var(--transition-fast) ease-in-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    a.infoValue:hover {
+        color: var(--color-yellow-62);
+    }
+}
+
+@media (min-width: 768px) {
+    .infoRow {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: var(--space-8);
+    }
+
+    .infoLabel {
+        flex-shrink: 0;
+    }
+
+    .infoValue {
+        text-align: right;
+    }
+}
+
+@media (min-width: 1024px) {
+    .section {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: var(--page-gutter);
+        align-items: start;
+    }
+
+    .submitButton {
+        align-self: flex-start;
+        width: auto;
+    }
+
+    .infoRow {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .infoValue {
+        text-align: left;
+    }
+}
