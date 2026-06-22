@@ -23,11 +23,14 @@ function Visualizer({ photos, currentIndex, onClose, onNavigate }: VisualizerPro
 
     const [previewPhotoId, setPreviewPhotoId] = useState<number | null>(null);
     const [sharpPhotoId,   setSharpPhotoId]   = useState<number | null>(null);
-    const hasPreview = previewPhotoId === photo.id;
-    const isSharp    = sharpPhotoId   === photo.id;
+    const [zoomPhotoId,    setZoomPhotoId]    = useState<number | null>(null);
+    const hasPreview  = previewPhotoId === photo.id;
+    const isSharp     = sharpPhotoId   === photo.id;
+    const isZoomSharp = zoomPhotoId    === photo.id;
 
-    const loResSrc = cloudinarySrc(photo.url, 800);
-    const hiResSrc = cloudinarySrc(photo.url, 1800);
+    const loResSrc   = cloudinarySrc(photo.url, 800);
+    const hiResSrc   = cloudinarySrc(photo.url, 1800);
+    const zoomResSrc = cloudinarySrc(photo.url, 3600);
 
     const { isZoomed, offset, isDragging, toggleZoom, mouseHandlers, touchHandlers } =
         useDragZoom({ currentIndex, hasPrev, hasNext, onNavigate });
@@ -49,6 +52,14 @@ function Visualizer({ photos, currentIndex, onClose, onNavigate }: VisualizerPro
         img.onload = () => setSharpPhotoId(photo.id);
         return () => { img.onload = null; };
     }, [photo.id, hiResSrc]);
+
+    useEffect(() => {
+        if (!isZoomed) return;
+        const img = new window.Image();
+        img.src = zoomResSrc;
+        img.onload = () => setZoomPhotoId(photo.id);
+        return () => { img.onload = null; };
+    }, [isZoomed, photo.id, zoomResSrc]);
 
     useEffect(() => {
         [currentIndex - 1, currentIndex + 1]
@@ -92,7 +103,7 @@ function Visualizer({ photos, currentIndex, onClose, onNavigate }: VisualizerPro
                     >
                         <img
                             className={`${styles.image} ${isZoomed ? styles.imageZoomed : ""}`}
-                            src={isSharp ? hiResSrc : loResSrc}
+                            src={isZoomed && isZoomSharp ? zoomResSrc : isSharp ? hiResSrc : loResSrc}
                             alt={photo.title}
                             draggable={false}
                             decoding="async"
