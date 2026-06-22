@@ -1,18 +1,18 @@
 {
   "hero": {
-    "eyebrow": "Trackside · Editorial · Prints",
+    "eyebrow": "Sports · Events · Street / Photojournalism",
     "headingWhite": "Get in",
     "headingAccent": "Touch",
-    "paragraph": "Trackside accreditation, editorial commissions and prints. I reply within 48h."
+    "paragraph": "Sports coverage, event photography and editorial commissions. I reply within 48h."
   },
   "form": {
     "ariaLabel": "Contact enquiry form",
     "nameLabel": "Name",
     "namePlaceholder": "Your name",
     "emailLabel": "E-mail",
-    "emailPlaceholder": "you@studio.com",
+    "emailPlaceholder": "you@gmail.com",
     "typeLabel": "Type of work",
-    "typePlaceholder": "Trackside / editorial / print order",
+    "typePlaceholder": "Sports / event / editorial",
     "messageLabel": "Message",
     "messagePlaceholder": "Tell me about the shoot…",
     "submit": "Send enquiry",
@@ -29,6 +29,6 @@
     "locationLabel": "Based in",
     "location": "Barcelona, Catalonia",
     "availableLabel": "Available for",
-    "available": "Race weekends · Editorial commissions · Fine prints"
+    "available": "Sports Coverage · Events · Street / Photojournalism"
   }
 }
