@@ -198,6 +198,26 @@
     object-position: center;
 }
 
+/* ── Skeleton ── */
+
+.skeletonFrameHeader {
+    display: block;
+    height: var(--text-sm);
+    width: 100px;
+    background: var(--color-grey-16);
+    border-radius: 4px;
+}
+
+.skeletonMainFrame {
+    height: 32.87rem;
+    background: var(--color-grey-16);
+}
+
+.skeletonThumbnail {
+    height: clamp(6.5rem, 11vw, 8.5rem);
+    background: var(--color-grey-16);
+}
+
 /* ── Reduced motion ── */
 
 @media (prefers-reduced-motion: reduce) {

@@ -52,6 +52,22 @@
     color: var(--color-yellow-62);
 }
 
+.skeletonSubtitle{
+    display: block;
+    height: var(--text-sm);
+    width: 120px;
+    background: var(--color-grey-16);
+    border-radius: 4px;
+}
+
+.skeletonTitle{
+    display: block;
+    height: clamp(var(--text-2xl), 3vw, var(--text-3xl));
+    width: 280px;
+    background: var(--color-grey-16);
+    border-radius: 4px;
+}
+
 @media (min-width: 600px){
     .header{
         flex-direction: row;

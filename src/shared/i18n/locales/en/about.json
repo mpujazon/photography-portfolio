@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "eyebrow": "Street & Sports Photographer",
+    "firstName": "Miguel",
+    "lastName": "Pujazón",
+    "paragraph": "I shoot motion and the street — the heat off a MotoGP straight, the lean of a classic bike at Montjuïc, the half-second a city gives you on a corner. No staging, no retouching beyond the grade. Just the frame I caught.",
+    "imageAlt": "Portrait — Miguel Pujazón",
+    "captionType": "Portrait",
+    "captionLocation": "Barcelona · 2025"
+  },
+  "stats": {
+    "yearsLabel": "Years shooting",
+    "albumsLabel": "Albums",
+    "framesLabel": "Frames to come"
+  },
+  "body": {
+    "longVersionLabel": "The long version",
+    "p1": "I came to photography through motorsport — standing at a fence at Montmeló as a teenager, watching bikes disappear into Turn 1 faster than my eyes could follow. I wanted to hold that. A borrowed camera and a cheap telephoto later, I was hooked on the problem: how do you make a still image feel like 300 km/h?",
+    "p2": "The street came after, and for the opposite reason. Where the track is about anticipation and long glass, Barcelona is about being invisible — a 28mm, zone-focused, shooting from the hip, keeping maybe one frame in two hundred. Both disciplines are the same skill wearing different clothes: be early, be honest, press at the right half-second.",
+    "p3": "I don't retouch. The grade is the only intervention — pushing contrast and shadow until the frame matches the light I remember. If it doesn't work straight out of camera, it doesn't work.",
+    "kitLabel": "Kit & method",
+    "bodiesLabel": "Bodies",
+    "bodies": "Sony a1 · Nikon Z9 · Leica Q2",
+    "sportGlassLabel": "Sport glass",
+    "sportGlass": "FE 400mm f/2.8 GM · 70-200mm f/2.8",
+    "streetGlassLabel": "Street glass",
+    "streetGlass": "Summilux 28mm f/1.7",
+    "methodLabel": "Method",
+    "method": "Available light · panning · zone focus",
+    "postLabel": "Post",
+    "post": "Manual grade only · no retouching",
+    "cta": "Work with me"
+  }
+}

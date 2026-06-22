@@ -1,14 +1,8 @@
 import style from './Hero.module.css';
 import Carousel from "../Carousel/Carousel.tsx";
-import type { PhotoDto } from '../../../../shared/models/Photo.ts';
 import { HeroTextContent } from "../HeroTextContent/HeroTextContent.tsx";
 
-type HeroProps = {
-    photos: PhotoDto[]
-}
-
-export function Hero(heroProps: HeroProps) {
-
+export function Hero() {
     return (
         <section className={style.heroSection}>
             <div className={style.heroShell}>
@@ -18,7 +12,7 @@ export function Hero(heroProps: HeroProps) {
                 >
                     <HeroTextContent />
                     <div className={style.heroSecondColumn}>
-                        <Carousel photos={heroProps.photos}/>
+                        <Carousel />
                     </div>
                 </section>
             </div>
