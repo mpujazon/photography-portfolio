@@ -47,6 +47,63 @@
     border-bottom: var(--stroke-weight-2) solid var(--color-yellow-62);
 }
 
+/* Right group: nav + actions — keeps space-between as Brand ↔ group */
+.rightGroup {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+}
+
+/* Header actions: lang switcher + hamburger */
+.headerActions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.langSwitcher {
+    display: flex;
+    align-items: center;
+    border: var(--stroke-weight-1) solid rgba(255, 255, 255, 0.18);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.langBtn {
+    background: none;
+    border: none;
+    padding: var(--space-1) var(--space-3);
+    cursor: pointer;
+    color: var(--color-white-solid);
+    font-family: var(--font-family-font-3), sans-serif;
+    font-size: var(--text-md);
+    font-weight: var(--font-weight-400);
+    letter-spacing: var(--letter-spacing-1-68);
+    text-transform: uppercase;
+    line-height: normal;
+    opacity: 0.45;
+    transition: opacity var(--transition-fast) ease, background-color var(--transition-fast) ease;
+    &:focus-visible {
+        outline: var(--stroke-weight-2) solid var(--color-yellow-62);
+        outline-offset: 2px;
+        position: relative;
+        z-index: 1;
+    }
+    &:hover:not(:disabled) {
+        opacity: 0.75;
+    }
+}
+
+.langBtn + .langBtn {
+    border-left: var(--stroke-weight-1) solid rgba(255, 255, 255, 0.18);
+}
+
+.langBtnActive {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: default;
+}
+
 /* Hamburger button */
 .hamburger {
     display: flex;
