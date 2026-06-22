@@ -1,3 +1,5 @@
+import httpClient from "../httpClient";
+
 export interface ContactPayload {
     name: string;
     email: string;
@@ -6,11 +8,5 @@ export interface ContactPayload {
 }
 
 export function sendContactEnquiry(payload: ContactPayload): Promise<void> {
-    return fetch(`${import.meta.env.VITE_API_BASE_URL}/contact`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-    }).then(res => {
-        if (!res.ok) throw new Error(res.statusText);
-    });
+    return httpClient.postVoid("/contact", payload);
 }
