@@ -4,6 +4,8 @@ import { initReactI18next } from "react-i18next";
 import enCommon from "./locales/en/common.json";
 import enHome from "./locales/en/home.json";
 import enAlbums from "./locales/en/albums.json";
+import enAbout from "./locales/en/about.json";
+import enContact from "./locales/en/contact.json";
 
 i18n
     .use(initReactI18next)
@@ -16,6 +18,8 @@ i18n
                 common: enCommon,
                 home: enHome,
                 albums: enAlbums,
+                about: enAbout,
+                contact: enContact,
             },
         },
         interpolation: {

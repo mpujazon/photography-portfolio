@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "eyebrow": "Trackside · Editorial · Prints",
+    "headingWhite": "Get in",
+    "headingAccent": "Touch",
+    "paragraph": "Trackside accreditation, editorial commissions and prints. I reply within 48h."
+  },
+  "form": {
+    "ariaLabel": "Contact enquiry form",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "you@studio.com",
+    "typeLabel": "Type of work",
+    "typePlaceholder": "Trackside / editorial / print order",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell me about the shoot…",
+    "submit": "Send enquiry",
+    "sending": "Sending…",
+    "success": "Message sent — I'll be in touch within 48h.",
+    "error": "Something went wrong. Try again or email me directly."
+  },
+  "info": {
+    "ariaLabel": "Contact details",
+    "emailLabel": "E-mail",
+    "email": "lensbymike.media@gmail.com",
+    "instagramLabel": "Instagram",
+    "instagram": "@lensbymike",
+    "locationLabel": "Based in",
+    "location": "Barcelona, Catalonia",
+    "availableLabel": "Available for",
+    "available": "Race weekends · Editorial commissions · Fine prints"
+  }
+}
