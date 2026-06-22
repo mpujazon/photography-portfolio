@@ -1,0 +1,18 @@
+{
+    "header": {
+        "subtitle": "El archivo",
+        "title": "Álb<0>u</0>mes",
+        "paragraph": "Trabajo de deporte, eventos y fotografía urbana: desde vallas de circuito y salas llenas hasta rincones vacíos de Barcelona a primera hora. Mundos distintos, el mismo enfoque: luz disponible, sin posados, solo el encuadre."
+    },
+    "albumCard": {
+        "frames": "fotos"
+    },
+    "emptyState": "Todavía no hay álbumes publicados. Vuelve pronto.",
+    "detail": {
+        "meta": {
+            "category": "Categoría",
+            "gear": "Equipo",
+            "frames": "Fotos"
+        }
+    }
+}

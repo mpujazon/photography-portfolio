@@ -1,4 +1,4 @@
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import styles from "./ContactHero.module.css";
 
 function ContactHero() {
@@ -7,8 +7,9 @@ function ContactHero() {
         <section className={styles.section}>
             <p className={styles.eyebrow}>{t("hero.eyebrow")}</p>
             <h1 className={styles.heading}>
-                <span className={styles.headingWhite}>{t("hero.headingWhite")}</span>
-                <span className={styles.headingAccent}>{t("hero.headingAccent")}</span>
+                <Trans i18nKey="hero.heading" ns="contact">
+                    Get in<span className={styles.headingAccent}>Touch</span>
+                </Trans>
             </h1>
             <p className={styles.paragraph}>{t("hero.paragraph")}</p>
         </section>

@@ -1,0 +1,33 @@
+{
+  "hero": {
+    "eyebrow": "Deporte · Eventos · Fotografía urbana · Fotoperiodismo",
+    "heading": "CON<1>T</1>ACTO",
+    "paragraph": "Cobertura deportiva, fotografía de eventos y encargos editoriales. Respondo en menos de 48 h."
+  },
+  "form": {
+    "ariaLabel": "Formulario de contacto",
+    "nameLabel": "Nombre",
+    "namePlaceholder": "Tu nombre",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "tu@gmail.com",
+    "typeLabel": "Tipo de trabajo",
+    "typePlaceholder": "Deporte / evento / editorial",
+    "messageLabel": "Mensaje",
+    "messagePlaceholder": "Cuéntame sobre la sesión…",
+    "submit": "Enviar consulta",
+    "sending": "Enviando…",
+    "success": "Mensaje enviado — te responderé en menos de 48 h.",
+    "error": "Algo ha ido mal. Inténtalo de nuevo o escríbeme directamente por email."
+  },
+  "info": {
+    "ariaLabel": "Datos de contacto",
+    "emailLabel": "E-mail",
+    "email": "lensbymike.media@gmail.com",
+    "instagramLabel": "Instagram",
+    "instagram": "@lensbymike",
+    "locationLabel": "Base en",
+    "location": "Barcelona, Cataluña",
+    "availableLabel": "Disponible para",
+    "available": "Cobertura deportiva · Eventos · Fotografía urbana · Fotoperiodismo"
+  }
+}
