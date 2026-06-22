@@ -12,7 +12,7 @@
         "ariaLabel": "Main navigation"
     },
     "footer": {
-        "eyebrow": "Street & Sports Photographer · Barcelona, ES · Since 2018",
+        "eyebrow": "Sports · Events · Street / Photojournalism · Barcelona, ES · Since 2018",
         "tagline": "Light. Motion. Detail.",
         "copyright": "© {{year}} Miguel Pujazón",
         "socialAriaLabel": "Social media",
@@ -29,6 +29,11 @@
         "ariaNext": "Next photo",
         "ariaZoomOut": "Zoom out",
         "ariaZoomIn": "Zoom in"
+    },
+    "error": {
+        "title": "Something went wrong",
+        "description": "An unexpected error occurred. Please try again.",
+        "retry": "Try again"
     },
     "visualizerPanel":{
         "idLabel": "NO.",

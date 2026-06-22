@@ -1,0 +1,119 @@
+@keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+.card {
+    position: relative;
+    display: grid;
+    grid-template-areas:
+        "number info"
+        "cover  cover";
+    grid-template-columns: auto 1fr;
+    column-gap: var(--space-4);
+    row-gap: var(--space-3);
+    padding: var(--space-4) 0;
+    border-bottom: var(--stroke-weight-1) solid var(--color-grey-25);
+    align-items: start;
+}
+
+.albumNumber {
+    grid-area: number;
+    width: 2rem;
+    height: 1.5rem;
+    border-radius: var(--radius-sm);
+}
+
+.albumInfo {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+    padding-block: var(--space-6);
+    min-width: 0;
+}
+
+.title {
+    width: 60%;
+    height: 1.25rem;
+    border-radius: var(--radius-sm);
+}
+
+.subtitle {
+    width: 35%;
+    height: 0.75rem;
+    border-radius: var(--radius-sm);
+}
+
+.paragraph {
+    width: 90%;
+    height: 0.875rem;
+    border-radius: var(--radius-sm);
+}
+
+.coverContainer {
+    grid-area: cover;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-sm);
+}
+
+/* ── Shimmer on all skeleton blocks ── */
+.albumNumber,
+.title,
+.subtitle,
+.paragraph,
+.coverContainer {
+    background: linear-gradient(
+        90deg,
+        var(--color-grey-25) 25%,
+        var(--color-grey-38) 50%,
+        var(--color-grey-25) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .albumNumber,
+    .title,
+    .subtitle,
+    .paragraph,
+    .coverContainer {
+        animation: none;
+    }
+}
+
+/* ── Tablet ── */
+@media (min-width: 640px) {
+    .card {
+        grid-template-areas: "number info cover";
+        grid-template-columns: auto 1fr auto;
+        gap: var(--space-5);
+        align-items: center;
+    }
+
+    .coverContainer {
+        width: 11rem;
+        aspect-ratio: auto;
+        align-self: stretch;
+    }
+}
+
+/* ── Desktop ── */
+@media (min-width: 768px) {
+    .card {
+        padding: var(--space-6) 0;
+        gap: var(--space-6);
+        min-height: 9rem;
+    }
+
+    .albumNumber {
+        width: 2.5rem;
+        height: 2rem;
+    }
+
+    .coverContainer {
+        width: 17rem;
+    }
+}

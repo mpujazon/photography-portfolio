@@ -1,0 +1,18 @@
+{
+    "header": {
+        "subtitle": "The archive",
+        "title": "Alb<0>u</0>ms",
+        "paragraph": "Sports, events and street work — from circuit fences and crowded floors to empty corners of Barcelona at first light. Different worlds, same approach: available light, no staging, just the frame."
+    },
+    "albumCard": {
+        "frames": "frames"
+    },
+    "emptyState": "No albums published yet. Come back soon.",
+    "detail": {
+        "meta": {
+            "category": "Category",
+            "gear": "Gear",
+            "frames": "Frames"
+        }
+    }
+}

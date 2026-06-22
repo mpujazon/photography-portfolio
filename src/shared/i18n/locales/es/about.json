@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "eyebrow": "Deporte · Eventos · Fotografía urbana · Fotoperiodismo",
+    "firstName": "Miguel",
+    "lastName": "Pujazón",
+    "paragraph": "Me muevo entre la ciudad y el circuito, atento a esos momentos que aparecen sin avisar y se van igual de rápido. Una curva al límite, un desconocido a medio paso, una luz que dura medio segundo antes de que la ciudad se la lleve. No preparo la escena ni retoco más allá del color. Solo el encuadre que conseguí atrapar.",
+    "imageAlt": "Retrato — Miguel Pujazón",
+    "captionType": "Retrato",
+    "captionLocation": "Barcelona · 2025"
+  },
+  "stats": {
+    "yearsLabel": "Años fotografiando",
+    "albumsLabel": "Álbumes",
+    "framesLabel": "Fotos por venir"
+  },
+  "body": {
+    "longVersionLabel": "La versión larga",
+    "p1": "La fotografía empezó para mí en Montmeló, detrás de una valla, cuando tenía 13 años. Los F1 desaparecían en la curva 3 más rápido de lo que era capaz de seguirlos, y recuerdo querer retener esa sensación: el ruido, la velocidad, ese instante justo antes de que todo se fuera. Años después, mi tío me puso una cámara en las manos y me obsesioné con una pregunta: ¿cómo haces que una imagen quieta se sienta a 300 km/h?",
+    "p2": "La fotografía urbana llegó más tarde, casi como la lección contraria. En el circuito esperas, lees la trazada y confías en el teleobjetivo. En Barcelona intento desaparecer: 28mm, enfoque por zonas, disparar desde la cadera, aceptando que la mayoría de fotogramas van a fallar. Pero debajo late el mismo instinto: llegar pronto, ser honesto y apretar el disparador cuando el momento tiene la tensión justa para sostenerse solo.",
+    "p3": "No retoco. Es en el color donde moldeo el estado de ánimo de la fotografía: a veces con un blanco y negro profundo, a veces con tonos más emocionales que literales. No busco reconstruir exactamente lo que había; busco proteger lo que me hizo detenerme y tomar esa foto. Si la fotografía no tiene verdad antes del color, el color no la salvará.",
+    "kitLabel": "Equipo y método",
+    "bodiesLabel": "Cuerpos",
+    "bodies": "Sony a7iv · Canon 60D",
+    "sportGlassLabel": "Teleobjetivos",
+    "sportGlass": "Sony FE 200-600mm f/5.6-6.3 G OSS · Sony FE 70-200mm f/4 G OSS",
+    "streetGlassLabel": "Ópticas urbanas",
+    "streetGlass": "Sony FE 28-60 mm F4-5,6 · Sony FE 50mm F1.8",
+    "methodLabel": "Método",
+    "method": "Luz disponible · barrido · enfoque por zonas",
+    "postLabel": "Postproducción",
+    "post": "Solo color manual · sin retoque",
+    "cta": "Trabaja conmigo"
+  }
+}

@@ -7,7 +7,6 @@ export function PublicLayout(){
         <>
             <Header/>
             <main>
-
                 <Outlet/>
             </main>
             <Footer/>

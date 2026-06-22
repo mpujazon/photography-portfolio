@@ -16,8 +16,8 @@ function Gallery({ photos }: GalleryProps) {
         ? photos.findIndex(p => String(p.id) === photoId)
         : -1;
 
-    const openPhoto = (index: number) => setSearchParams({ photo: String(photos[index].id) });
-    const closePhoto = () => setSearchParams({});
+    const openPhoto = (index: number) => setSearchParams({ photo: String(photos[index].id) }, { replace: true });
+    const closePhoto = () => setSearchParams({}, { replace: true });
 
     useEffect(() => {
         if (photoId !== null && openIndex === -1) setSearchParams({});

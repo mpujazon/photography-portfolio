@@ -1,0 +1,54 @@
+{
+    "brand": {
+        "name": "LensByMike"
+    },
+    "nav": {
+        "home": "Inicio",
+        "albums": "Álbumes",
+        "about": "Sobre mí",
+        "contact": "Contacto",
+        "openMenu": "Abrir menú",
+        "closeMenu": "Cerrar menú",
+        "ariaLabel": "Navegación principal"
+    },
+    "footer": {
+        "eyebrow": "Deporte · Eventos · Fotografía urbana · Fotoperiodismo · Barcelona, ES · Desde 2018",
+        "tagline": "Light. Motion. Detail.",
+        "copyright": "© {{year}} Miguel Pujazón",
+        "socialAriaLabel": "Redes sociales",
+        "instagram": "Seguir en Instagram",
+        "px500": "Ver portfolio en 500px",
+        "email": "Enviar un email"
+    },
+    "photoCard": {
+        "ariaViewPhoto": "Ver foto:",
+        "viewPhoto": "Ver foto"
+    },
+    "visualizer": {
+        "ariaPrevious": "Foto anterior",
+        "ariaNext": "Foto siguiente",
+        "ariaZoomOut": "Alejar",
+        "ariaZoomIn": "Acercar"
+    },
+    "error": {
+        "title": "Algo ha ido mal",
+        "description": "Ha ocurrido un error inesperado. Inténtalo de nuevo.",
+        "retry": "Reintentar"
+    },
+    "visualizerPanel": {
+        "idLabel": "N.º",
+        "ariaClose": "Cerrar",
+        "captureDataLabel": "Datos de captura",
+        "body": "Cuerpo",
+        "lens": "Objetivo",
+        "focalLength": "Distancia focal",
+        "aperture": "Apertura",
+        "shutter": "Obturación",
+        "iso": "ISO",
+        "share": "compartir",
+        "ariaShare": "Copiar enlace a esta foto",
+        "linkCopied": "Enlace copiado ✓",
+        "copyLink": "Copiar enlace",
+        "currentImage": "Imagen {{currentImage}} de {{total}}"
+    }
+}
