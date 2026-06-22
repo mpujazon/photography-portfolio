@@ -1,5 +1,3 @@
-/* ── Mobile-first ── */
-
 .section {
     width: min(100%, var(--layout-max));
     margin: 0 auto;
@@ -8,8 +6,6 @@
     gap: var(--space-8);
     padding-bottom: var(--space-layout-y);
 }
-
-/* ── Text column ── */
 
 .textColumn {
     display: flex;
@@ -59,8 +55,6 @@
     margin: 0;
 }
 
-/* ── Image column ── */
-
 .imageColumn {
     display: flex;
     flex-direction: column;
@@ -89,8 +83,6 @@
     text-transform: uppercase;
 }
 
-/* ── Tablet: ≥ 495px ── */
-
 @media (min-width: 495px) {
     .heading {
         font-size: clamp(4rem, 14vw, 6.5rem);
@@ -100,8 +92,6 @@
         max-width: var(--layout-card);
     }
 }
-
-/* ── Tablet landscape: ≥ 768px → 2-column ── */
 
 @media (min-width: 768px) {
     .section {
@@ -124,8 +114,6 @@
         font-size: clamp(4rem, 7vw, 7rem);
     }
 }
-
-/* ── Desktop: ≥ 1024px ── */
 
 @media (min-width: 1024px) {
     .section {
