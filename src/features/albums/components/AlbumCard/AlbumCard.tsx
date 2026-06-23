@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import type { PublicAlbum } from '../../../../shared/models/Album';
@@ -12,6 +13,7 @@ type AlbumCardProps = {
 function AlbumCard({ album, index }: AlbumCardProps) {
     const { t } = useTranslation("albums");
     const titleId = `album-title-${album.id}`;
+    const [coverError, setCoverError] = useState(false);
 
     return (
         <article className={styles.card} aria-labelledby={titleId}>
@@ -32,13 +34,14 @@ function AlbumCard({ album, index }: AlbumCardProps) {
             </div>
 
             <div className={styles.coverContainer}>
-                {album.coverPhotoUrl && (
+                {album.coverPhotoUrl && !coverError && (
                     <img
                         src={cloudinarySrc(album.coverPhotoUrl, 800)}
                         alt=""
                         className={styles.coverImage}
                         loading="lazy"
                         decoding="async"
+                        onError={() => setCoverError(true)}
                     />
                 )}
                 <div className={styles.coverOverlay} aria-hidden="true">
