@@ -16,21 +16,13 @@ type VisualizerProps = {
 
 function Visualizer({ photos, currentIndex, onClose, onNavigate }: VisualizerProps) {
     const { t } = useTranslation("common");
-    const photo  = photos[currentIndex];
-    const total  = photos.length;
+    const photo   = photos[currentIndex];
+    const total   = photos.length;
     const hasPrev = currentIndex > 0;
     const hasNext = currentIndex < total - 1;
 
-    const [previewPhotoId, setPreviewPhotoId] = useState<number | null>(null);
-    const [sharpPhotoId,   setSharpPhotoId]   = useState<number | null>(null);
-    const [zoomPhotoId,    setZoomPhotoId]    = useState<number | null>(null);
-    const hasPreview  = previewPhotoId === photo.id;
-    const isSharp     = sharpPhotoId   === photo.id;
-    const isZoomSharp = zoomPhotoId    === photo.id;
-
-    const loResSrc   = cloudinarySrc(photo.url, 800);
-    const hiResSrc   = cloudinarySrc(photo.url, 1800);
-    const zoomResSrc = cloudinarySrc(photo.url, 3600);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [src, setSrc] = useState(() => cloudinarySrc(photo.url, 800));
 
     const { isZoomed, offset, isDragging, toggleZoom, mouseHandlers, touchHandlers } =
         useDragZoom({ currentIndex, hasPrev, hasNext, onNavigate });
@@ -47,19 +39,14 @@ function Visualizer({ photos, currentIndex, onClose, onNavigate }: VisualizerPro
     }, []);
 
     useEffect(() => {
+        setIsLoaded(false);
+        setSrc(cloudinarySrc(photo.url, 800));
+        const fullSrc = cloudinarySrc(photo.url, 1800);
         const img = new window.Image();
-        img.src = hiResSrc;
-        img.onload = () => setSharpPhotoId(photo.id);
+        img.src = fullSrc;
+        img.onload = () => setSrc(fullSrc);
         return () => { img.onload = null; };
-    }, [photo.id, hiResSrc]);
-
-    useEffect(() => {
-        if (!isZoomed) return;
-        const img = new window.Image();
-        img.src = zoomResSrc;
-        img.onload = () => setZoomPhotoId(photo.id);
-        return () => { img.onload = null; };
-    }, [isZoomed, photo.id, zoomResSrc]);
+    }, [photo.id, photo.url]);
 
     useEffect(() => {
         [currentIndex - 1, currentIndex + 1]
@@ -91,7 +78,7 @@ function Visualizer({ photos, currentIndex, onClose, onNavigate }: VisualizerPro
                         aria-label={t("visualizer.ariaPrevious")}
                     >‹</button>
 
-                    {!hasPreview && !isSharp && (
+                    {!isLoaded && (
                         <div className={styles.imageSkeleton} aria-hidden="true" />
                     )}
 
@@ -102,18 +89,16 @@ function Visualizer({ photos, currentIndex, onClose, onNavigate }: VisualizerPro
                         {...touchHandlers}
                     >
                         <img
+                            key={photo.id}
                             className={`${styles.image} ${isZoomed ? styles.imageZoomed : ""}`}
-                            src={isZoomed && isZoomSharp ? zoomResSrc : isSharp ? hiResSrc : loResSrc}
+                            src={src}
                             alt={photo.title}
                             draggable={false}
                             decoding="async"
                             fetchPriority="high"
-                            onLoad={() => setPreviewPhotoId(photo.id)}
-                            style={{
-                                opacity: hasPreview || isSharp ? 1 : 0,
-                                filter: isSharp ? undefined : "blur(16px)",
-                                transition: "filter 0.4s ease, opacity 0.15s ease",
-                            }}
+                            onLoad={() => setIsLoaded(true)}
+                            onError={() => setIsLoaded(true)}
+                            style={{ opacity: isLoaded ? 1 : 0, transition: "opacity 0.15s ease" }}
                         />
                     </div>
 
@@ -124,7 +109,7 @@ function Visualizer({ photos, currentIndex, onClose, onNavigate }: VisualizerPro
                         aria-label={t("visualizer.ariaNext")}
                     >›</button>
 
-                    {isSharp && (
+                    {isLoaded && (
                         <div className={styles.watermark} aria-hidden="true">LENSBYMIKE</div>
                     )}
 

@@ -1,7 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useSearchParams } from "react-router";
 import PhotoCard from "../PhotoCard/PhotoCard";
 import Visualizer from "../Visualizer/Visualizer";
+import GallerySkeleton from "./GallerySkeleton";
 import type { PhotoDto } from "../../models/Photo";
 import style from "./Gallery.module.css";
 
@@ -16,6 +17,16 @@ function Gallery({ photos }: GalleryProps) {
         ? photos.findIndex(p => String(p.id) === photoId)
         : -1;
 
+    const [loadedCount, setLoadedCount] = useState(0);
+    const allLoaded = photos.length === 0 || loadedCount >= photos.length;
+
+    const photosKey = photos.map(p => p.id).join(',');
+    useEffect(() => { setLoadedCount(0); }, [photosKey]);
+
+    const handleImageSettled = useCallback(() => {
+        setLoadedCount(c => c + 1);
+    }, []);
+
     const openPhoto = (index: number) => setSearchParams({ photo: String(photos[index].id) }, { replace: true });
     const closePhoto = () => setSearchParams({}, { replace: true });
 
@@ -25,12 +36,20 @@ function Gallery({ photos }: GalleryProps) {
 
     return (
         <>
-            <div className={style.gallery}>
+            {!allLoaded && <GallerySkeleton count={photos.length} />}
+            <div
+                className={style.gallery}
+                style={!allLoaded ? { visibility: "hidden", height: 0, overflow: "hidden" } : undefined}
+                aria-hidden={!allLoaded || undefined}
+            >
                 {photos.map((photo, index) => (
                     <PhotoCard
                         key={photo.id}
                         photo={photo}
                         onClick={() => openPhoto(index)}
+                        onImageLoad={handleImageSettled}
+                        onImageError={handleImageSettled}
+                        loading="eager"
                     />
                 ))}
             </div>
