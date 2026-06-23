@@ -1,5 +1,8 @@
 import { useTranslation } from "react-i18next";
 import styles from "./BehindTheLens.module.css";
+import { cloudinarySrc, cloudinarySrcSet } from "../../../../shared/utils/cloudinary";
+
+const BEHIND_THE_LENS_URL = "https://res.cloudinary.com/lensbymike/image/upload/v1782213676/BehindTheLens_xrr8st.jpg";
 
 function BehindTheLens() {
     const { t } = useTranslation("home");
@@ -8,7 +11,9 @@ function BehindTheLens() {
             <div className={styles.imageColumn}>
                 <img
                     className={styles.image}
-                    src="/BehindTheLens.jpg"
+                    src={cloudinarySrc(BEHIND_THE_LENS_URL, 800)}
+                    srcSet={cloudinarySrcSet(BEHIND_THE_LENS_URL)}
+                    sizes="(min-width: 768px) 50vw, 100vw"
                     alt={t("behindTheLens.imageAlt")}
                     loading="lazy"
                     decoding="async"

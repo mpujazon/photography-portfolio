@@ -1,5 +1,8 @@
 import { useTranslation } from "react-i18next";
 import styles from "./AboutHero.module.css";
+import { cloudinarySrc, cloudinarySrcSet } from "../../../../shared/utils/cloudinary";
+
+const ABOUT_PICTURE_URL = "https://res.cloudinary.com/lensbymike/image/upload/v1782213676/about-picture_p4rrpp.png";
 
 function AboutHero() {
     const { t } = useTranslation("about");
@@ -17,9 +20,12 @@ function AboutHero() {
             <div className={styles.imageColumn}>
                 <img
                     className={styles.image}
-                    src="/about-picture.png"
+                    src={cloudinarySrc(ABOUT_PICTURE_URL, 800)}
+                    srcSet={cloudinarySrcSet(ABOUT_PICTURE_URL)}
+                    sizes="(min-width: 768px) 50vw, 100vw"
                     alt={t("hero.imageAlt")}
                     loading="eager"
+                    fetchPriority="high"
                     decoding="async"
                 />
                 <div className={styles.caption}>
